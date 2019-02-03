@@ -1,6 +1,6 @@
 import awacs.s3 as s3
 from awacs.aws import Policy, Statement, Allow, Principal
-from troposphere import Template, AWS_STACK_NAME, Ref, Join, GetAtt, AWS_REGION, Parameter, constants
+from troposphere import Template, AWS_STACK_NAME, Ref, Join, GetAtt, Parameter, constants, AWS_REGION
 from troposphere.cloudfront import CloudFrontOriginAccessIdentity, CloudFrontOriginAccessIdentityConfig, Distribution, \
     DistributionConfig, DefaultCacheBehavior, Origin, S3OriginConfig, ForwardedValues, ViewerCertificate
 from troposphere.route53 import RecordSetGroup, RecordSet, AliasTarget
@@ -66,18 +66,22 @@ cloudfront = template.add_resource(Distribution(
                 QueryString=False,
             ),
         ),
+        DefaultRootObject='index.html',
         Enabled=True,
+        HttpVersion='http2',
         IPV6Enabled=True,
         Origins=[Origin(
-            DomainName=Join('', ['https://s3-', Ref(AWS_REGION), '.amazonaws.com/', Ref(bucket)]),
+            DomainName=Join('', [Ref(bucket), '.s3.', Ref(AWS_REGION), '.amazonaws.com']),
             Id='S3',
             S3OriginConfig=S3OriginConfig(
-                OriginAccessIdentity=Ref(oai),
+                OriginAccessIdentity=Join('/', ['origin-access-identity', 'cloudfront', Ref(oai)]),
             ),
         )],
+        PriceClass='PriceClass_100',
         ViewerCertificate=ViewerCertificate(
             AcmCertificateArn=Ref(certificate_arn),
             SslSupportMethod='sni-only',
+            MinimumProtocolVersion='TLSv1.1_2016',
         ),
     ),
 ))
