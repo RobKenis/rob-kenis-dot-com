@@ -10,7 +10,7 @@
       <v-spacer />
       <v-btn
         flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://github.com/RobKenis/rob-kenis-dot-com"
         target="_blank"
       >
         <span class="mr-2">
