@@ -5,10 +5,10 @@ phases:
     commands:
       - "cd app"
       - "npm install"
-      - "npm build"
+      - "npm run-script build"
   post_build:
     commands:
       - "echo 'Completed building.'"
 artifacts:
   files:
-    - app/dist/
+    - app/dist/*
