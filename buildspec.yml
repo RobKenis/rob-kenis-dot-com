@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - "cd app"
+      - "npm install"
+      - "npm build"
+  post_build:
+    commands:
+      - "echo 'Completed building.'"
+artifacts:
+  files:
+    - app/dist/
