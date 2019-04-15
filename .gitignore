@@ -16,3 +16,6 @@ dist/
 
 # NPM / Yarn
 node_modules/
+
+# Jest
+coverage/
