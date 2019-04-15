@@ -8,4 +8,5 @@ phases:
       - "npm run-script generate"
   post_build:
     commands:
-      - "echo 'Completed building.'"
+      - echo Completed building. Uploading artifacts to $DEPLOY_BUCKET
+      - aws s3 sync dist/ s3://$DEPLOY_BUCKET/
