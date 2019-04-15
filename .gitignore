@@ -12,6 +12,7 @@ app/dist
 
 # Nuxt
 .nuxt/
+dist/
 
 # NPM / Yarn
 node_modules/
