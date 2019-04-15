@@ -9,3 +9,9 @@ venv*/
 # Node
 app/node_modules
 app/dist
+
+# Nuxt
+.nuxt/
+
+# NPM / Yarn
+node_modules/
