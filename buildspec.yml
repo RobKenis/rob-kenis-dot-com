@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - "npm install"
+      - "npm run-script build"
+      - "npm run-script generate"
+  post_build:
+    commands:
+      - "echo 'Completed building.'"
