@@ -22,7 +22,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-content>
+    <v-content height="100%">
       <v-container>
         <nuxt />
       </v-container>

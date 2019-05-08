@@ -1,25 +1,40 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
+  <v-container
+    fluid
+    grid-list-md
   >
-    <v-flex
-      xs12
-      sm8
-      md6
+    <v-layout
+      row
+      align-start
     >
-      <Highlight title="Blogs" />
-    </v-flex>
-  </v-layout>
+      <v-flex
+        xs8
+        sm6
+        md6
+      >
+        <featured-content title="Personal" />
+      </v-flex>
+      <v-flex
+        xs8
+        sm6
+        md6
+      >
+        <featured-content
+          title="Featured"
+          link="/posts/jenkins-pipelines/"
+          content="Something about Jenkins"
+        />
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-import Highlight from '~/components/Highlight.vue';
+import FeaturedContent from "~/components/FeaturedContent.vue";
 
 export default {
   components: {
-    Highlight
+    FeaturedContent
   }
-}
+};
 </script>
