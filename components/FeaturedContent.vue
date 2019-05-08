@@ -1,9 +1,6 @@
 <template>
   <v-container>
-    <v-layout
-      align-center
-      justify-center
-    >
+    <v-layout>
       <v-flex>
         <v-card>
           <v-img

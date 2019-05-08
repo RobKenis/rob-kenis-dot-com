@@ -1,24 +1,16 @@
 <template>
-  <v-container
-    fluid
-    grid-list-md
-  >
+  <v-container grid-list-xl>
     <v-layout
-      row
-      align-start
+      v-bind="binding"
     >
-      <v-flex
-        xs8
-        sm6
-        md6
-      >
-        <featured-content title="Personal" />
+      <v-flex>
+        <featured-content
+          title="Featured"
+          link="/posts/jenkins-pipelines/"
+          content="Something about Jenkins"
+        />
       </v-flex>
-      <v-flex
-        xs8
-        sm6
-        md6
-      >
+      <v-flex>
         <featured-content
           title="Featured"
           link="/posts/jenkins-pipelines/"
@@ -35,6 +27,15 @@ import FeaturedContent from "~/components/FeaturedContent.vue";
 export default {
   components: {
     FeaturedContent
+  },
+  computed: {
+    binding() {
+      const binding = {}
+
+      if (this.$vuetify.breakpoint.mdAndDown) {binding.column = true}
+
+      return binding
+    }
   }
 };
 </script>

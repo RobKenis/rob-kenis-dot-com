@@ -12,7 +12,7 @@
       </v-avatar>
       <v-toolbar-title>Rob Kenis</v-toolbar-title>
       <v-spacer />
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items>
         <v-btn
           v-for="(link, i) in links"
           :key="i"
