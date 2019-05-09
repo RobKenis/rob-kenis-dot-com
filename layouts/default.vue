@@ -17,6 +17,8 @@
           v-for="(link, i) in links"
           :key="i"
           flat
+          :href="link.url"
+          target="_blank"
         >
           {{ link.title }}
         </v-btn>
