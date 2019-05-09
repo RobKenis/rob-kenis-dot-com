@@ -2,14 +2,6 @@
 .idea/
 *.iml
 
-# Python
-venv/
-venv*/
-
-# Node
-app/node_modules
-app/dist
-
 # Nuxt
 .nuxt/
 dist/

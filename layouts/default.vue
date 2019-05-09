@@ -1,63 +1,51 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
+    <v-toolbar>
+      <v-avatar
+        size="2em"
+        color="white"
+      >
+        <img
+          src="/v.png"
+          alt="avatar"
         >
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar :clipped-left="clipped" fixed app>
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+      </v-avatar>
+      <v-toolbar-title>Rob Kenis</v-toolbar-title>
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>menu</v-icon>
-      </v-btn>
+      <v-toolbar-items>
+        <v-btn
+          v-for="(link, i) in links"
+          :key="i"
+          flat
+          :href="link.url"
+          target="_blank"
+        >
+          {{ link.title }}
+        </v-btn>
+      </v-toolbar-items>
     </v-toolbar>
-    <v-content>
+    <v-content height="100%">
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
+    <v-footer height="auto">
+      <v-layout
+        justify-center
+        row
+        wrap
+      >
+        <v-flex
+          lighten-2
+          py-3
+          text-xs-center
+          white--text
+          xs12
+        >
+          &copy;2019 —
+          <strong>Rob Kenis</strong>
+        </v-flex>
+      </v-layout>
     </v-footer>
   </v-app>
 </template>
@@ -66,26 +54,12 @@
 export default {
   data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
+      links: [
+        {url: "https://github.com/RobKenis", title: "GitHub"},
+        {url: "https://www.linkedin.com/in/robkenis", title: "LinkedIn"},
+        {url: "https://twitter.com/robkenis", title: "Twitter"}
+      ]
+    };
   }
-}
+};
 </script>
