@@ -4,6 +4,7 @@
       <v-flex
         v-for="c in content.slice(0,maxSize)"
         :key="c.id"
+        lg6
       >
         <FeaturedContent
           :title="c.title"
@@ -40,7 +41,8 @@ export default Vue.extend({
         {
           id: "01",
           title: "Jenkins Pipelines ♥ AWS",
-          description: "How to setup Jenkins and leverage the pipelines plugin to create a CI/CD workflow to AWS Beanstalk.",
+          description: "Introduction to Jenkins",
+          content: "How to setup Jenkins and leverage the pipelines plugin to create a CI/CD workflow to AWS Beanstalk.",
           link: "/posts/jenkins-pipelines-to-aws"
         },
         {
