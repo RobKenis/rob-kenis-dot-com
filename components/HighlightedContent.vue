@@ -41,7 +41,7 @@ export default Vue.extend({
           id: "01",
           title: "Jenkins Pipelines ♥ AWS",
           description: "How to setup Jenkins and leverage the pipelines plugin to create a CI/CD workflow to AWS Beanstalk.",
-          link: "https://robkenis.com/first-link"
+          link: "/posts/jenkins-pipelines-to-aws"
         },
         {
           id: "02",
