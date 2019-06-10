@@ -52,6 +52,9 @@
     "ts-jest": "^24.0.2",
     "vue-jest": "^3.0.3"
   },
+  "resolutions":{
+	  "axios": "0.18.1"
+  },
     "husky": {
       "hooks": {
         "pre-commit": "yarn lint --fix",
