@@ -1,40 +1,20 @@
 <template>
-  <v-container grid-list-xl>
-    <v-layout
-      v-bind="binding"
-    >
-      <v-flex>
-        <featured-content
-          title="Featured"
-          link="/posts/jenkins-pipelines/"
-          content="Something about Jenkins"
-        />
-      </v-flex>
-      <v-flex>
-        <featured-content
-          title="Featured"
-          link="/posts/jenkins-pipelines/"
-          content="Something about Jenkins"
-        />
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <HighlightedContent :orientation="orientation" />
 </template>
 
 <script>
-import FeaturedContent from "~/components/FeaturedContent.vue";
+import HighlightedContent from "~/components/HighlightedContent.vue";
 
 export default {
   components: {
-    FeaturedContent
+    HighlightedContent
   },
   computed: {
-    binding() {
-      const binding = {}
-
-      if (this.$vuetify.breakpoint.mdAndDown) {binding.column = true}
-
-      return binding
+    orientation() {
+      if (this.$vuetify.breakpoint.mdAndDown) {
+        return "column";
+      }
+      return "row";
     }
   }
 };
