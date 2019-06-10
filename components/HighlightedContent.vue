@@ -39,23 +39,14 @@ export default Vue.extend({
       content: [
         {
           id: "01",
-          title: "First article",
-          description: "First description",
-          content: "First content",
-          link: "https://robkenis.com/first-link"
+          title: "Jenkins Pipelines ♥ AWS",
+          description: "How to setup Jenkins and leverage the pipelines plugin to create a CI/CD workflow to AWS Beanstalk.",
+          link: "/posts/jenkins-pipelines-to-aws"
         },
         {
           id: "02",
-          title: "Second article",
-          description: "Second description",
-          content: "Second content"
-        },
-        {
-          id: "03",
-          title: "Third article",
-          description: "Third description",
-          content: "Third content",
-          link: "https://robkenis.com/third-link"
+          title: "Scaling your website to 1 million users",
+          description: "Work in progress . . .",
         }
       ]
     };

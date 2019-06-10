@@ -77,5 +77,11 @@ export default {
         })
       }
     }
+  },
+  generate: {
+    routes: [
+      '/posts/jenkins-pipelines-to-aws',
+      '/posts/scaling-to-one-million-users'
+    ]
   }
 }

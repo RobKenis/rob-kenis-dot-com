@@ -23,6 +23,7 @@
           flat
           color="secondary"
           :disabled="link === undefined"
+          :href="link"
         >
           Open
         </v-btn>
