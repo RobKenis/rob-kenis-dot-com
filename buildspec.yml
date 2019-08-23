@@ -5,7 +5,6 @@ phases:
     commands:
       - "npm install"
       - "npm run-script build"
-      - "npm run-script generate"
   post_build:
     commands:
       - echo Completed building. Uploading artifacts to $DEPLOY_BUCKET
