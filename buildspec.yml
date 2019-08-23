@@ -9,3 +9,4 @@ phases:
     commands:
       - echo Completed building. Uploading artifacts to $DEPLOY_BUCKET
       - aws s3 sync .next/ s3://$DEPLOY_BUCKET/_next/
+      - aws s3 sync static s3://$DEPLOY_BUCKET/static/
