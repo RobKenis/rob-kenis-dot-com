@@ -3,8 +3,9 @@
 .vscode/
 *.iml
 
-# Nuxt
+# Nuxt / Next
 .nuxt/
+.next/
 dist/
 
 # NPM / Yarn
