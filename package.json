@@ -19,22 +19,25 @@
     "nuxt": "^2.4.0",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.3",
-    "vuetify": "^1.5.5",
+    "vuetify": "^2.0.10",
     "vuetify-loader": "^1.2.1"
+  },
+  "resolutions": {
+    "lodash": "^4.17.2"
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.6.1",
-    "@nuxtjs/eslint-config": "^0.0.1",
+    "@nuxtjs/eslint-config": "^1.1.2",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.15.1",
-    "eslint-config-prettier": "^4.1.0",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-config-standard": ">=12.0.0",
     "eslint-loader": "^2.1.2",
-    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": ">=2.16.0",
     "eslint-plugin-jest": ">=22.3.0",
     "eslint-plugin-node": ">=8.0.1",
@@ -43,7 +46,7 @@
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
-    "husky": "^2.2.0",
+    "husky": "^3.0.4",
     "jest": "^24.1.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.16.4",
@@ -52,14 +55,10 @@
     "ts-jest": "^24.0.2",
     "vue-jest": "^3.0.3"
   },
-  "resolutions":{
-	  "axios": "0.18.1"
-  },
-    "husky": {
-      "hooks": {
-        "pre-commit": "yarn lint --fix",
-        "pre-push": "yarn test"
-      }
-    
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint --fix",
+      "pre-push": "yarn test"
+    }
   }
 }
