@@ -3,4 +3,4 @@ version: 0.2
 phases:
   build:
     commands:
-      - aws s3 sync index.html s3://$DEPLOY_BUCKET/
+      - aws s3 sync src s3://$DEPLOY_BUCKET/
