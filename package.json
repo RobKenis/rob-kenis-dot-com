@@ -1,0 +1,17 @@
+{
+  "name": "rob-kenis-dot-com",
+  "version": "1.0.0",
+  "description": "My very own homepage on the internet",
+  "author": "Rob Kenis",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },  
+  "dependencies": {
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
