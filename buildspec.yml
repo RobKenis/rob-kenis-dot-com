@@ -8,6 +8,4 @@ phases:
   post_build:
     commands:
       - echo Completed building. Uploading artifacts to $DEPLOY_BUCKET
-      - cp -r .next/server/static/*/ .next/server/static/latest/
-      - aws s3 sync .next/ s3://$DEPLOY_BUCKET/_next/
-      - aws s3 sync static s3://$DEPLOY_BUCKET/static/
+      - aws s3 sync out s3://$DEPLOY_BUCKET/
