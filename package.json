@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "test": "echo 'No tests. Nice!'"
   },
   "dependencies": {
     "next": "^9.2.1",
