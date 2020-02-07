@@ -11,7 +11,7 @@
     "test": "echo 'No tests. Nice!'"
   },
   "dependencies": {
-    "fontfaceobserver": "^2.1.0",
+    "antd": "^3.26.8",
     "next": "^9.2.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
@@ -19,7 +19,11 @@
   "devDependencies": {
     "@types/node": "^13.7.0",
     "@types/react": "^16.9.19",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-less": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "husky": "^4.2.1",
+    "less": "^3.10.3",
     "typescript": "^3.7.5"
   }
 }
