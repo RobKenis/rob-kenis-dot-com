@@ -11,19 +11,17 @@
     "test": "echo 'No tests. Nice!'"
   },
   "dependencies": {
-    "antd": "^3.26.8",
-    "next": "^9.3.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "next": "^9.5.5",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@types/node": "^13.7.0",
-    "@types/react": "^16.9.19",
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-less": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
-    "husky": "^4.2.1",
-    "less": "^3.10.3",
-    "typescript": "^3.7.5"
+    "@types/node": "^14.14.2",
+    "@types/react": "^16.9.53",
+    "typescript": "^4.0.3"
+  },
+  "resolutions": {
+    "object-path": "^0.11.5",
+    "node-fetch": "^2.6.1"
   }
 }
