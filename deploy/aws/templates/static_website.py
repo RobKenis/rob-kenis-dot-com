@@ -1,4 +1,4 @@
-from troposphere import Template, ImportValue, Parameter, constants, Join, Ref
+from troposphere import Template, ImportValue, Parameter, constants, Join, Ref, Tags, AWS_STACK_NAME
 from troposphere.certificatemanager import Certificate, DomainValidationOption
 
 template = Template(Description="Static Website")
@@ -25,6 +25,7 @@ template.add_resource(Certificate(
             HostedZoneId=ImportValue(Join('-', [Ref(dns_stack), 'HostedZoneId'])),
         ),
     ],
+    Tags=Tags({'Name': Ref(AWS_STACK_NAME)}),
 ))
 
 f = open("output/static_website.json", "w")
