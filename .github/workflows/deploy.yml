@@ -58,8 +58,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: next-out
+      - uses: chrislennon/action-aws-cli@v1.1
       - name: Upload website
-        uses: chrislennon/action-aws-cli@v1.1
         run: |
           BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name rob-kenis-dot-com | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="WebsiteOriginBucketName") | .OutputValue')
           aws s3 sync out/ s3://$BUCKET_NAME/
