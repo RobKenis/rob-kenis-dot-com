@@ -21,6 +21,11 @@ jobs:
       - run: yarn build
         env:
           CI: true
+      - name: Archive Next build
+        uses: actions/upload-artifact@v2
+        with:
+          name: next-out
+          path: out
   aws:
     needs: build
     runs-on: ubuntu-latest
@@ -49,6 +54,18 @@ jobs:
         with:
           name: rob-kenis-dot-com
           template: deploy/aws/output/static_website.json
+      - name: Download Next build
+        uses: actions/download-artifact@v2
+        with:
+          name: next-out
+      - name: Upload website
+        uses: chrislennon/action-aws-cli@v1.1
+        run: |
+          BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name rob-kenis-dot-com | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="WebsiteOriginBucketName") | .OutputValue')
+          aws s3 sync out/ s3://$BUCKET_NAME/
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   azure:
     needs: build
     runs-on: ubuntu-latest
