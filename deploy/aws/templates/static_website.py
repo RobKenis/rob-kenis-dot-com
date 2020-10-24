@@ -88,7 +88,7 @@ cloudfront = template.add_resource(Distribution(
         )],
         PriceClass='PriceClass_100',
         ViewerCertificate=ViewerCertificate(
-            AcmCertificateArn=GetAtt(cloudfront_certificate, 'Arn'),
+            AcmCertificateArn=Ref(cloudfront_certificate),
             SslSupportMethod='sni-only',
         ),
     ),
