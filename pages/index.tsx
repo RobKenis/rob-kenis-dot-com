@@ -9,7 +9,9 @@ const App = () => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
     </Head>
-    <Title title={"Rob Kenis"}/>
+    <div className={"container"}>
+      <Title title={"Rob Kenis_"}/>
+    </div>
   </div>
 )
 
