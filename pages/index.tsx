@@ -2,8 +2,6 @@ import Head from 'next/head';
 import React from 'react';
 import {Title} from "../components/Title";
 
-import '../styles/styles.css';
-
 const App = () => (
   <div>
     <Head>
@@ -12,7 +10,7 @@ const App = () => (
       <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
     </Head>
     <div className={"container"}>
-      <Title title={"Rob Kenis"}/>
+      <Title title={"Rob Kenis_"}/>
     </div>
   </div>
 )
