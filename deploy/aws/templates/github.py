@@ -30,6 +30,26 @@ template.add_resource(User(
                     Resource=['*'],
                 )]
             )
+        ),
+        Policy(
+            PolicyName='AllowS3',
+            PolicyDocument=PolicyDocument(
+                Statement=[Statement(
+                    Effect=Allow,
+                    Action=[Action(prefix='s3', action='*')],
+                    Resource=['*'],
+                )]
+            )
+        ),
+        Policy(
+            PolicyName='AllowCloudFront',
+            PolicyDocument=PolicyDocument(
+                Statement=[Statement(
+                    Effect=Allow,
+                    Action=[Action(prefix='cloudfront', action='*')],
+                    Resource=['*'],
+                )]
+            )
         )
     ]
 ))
