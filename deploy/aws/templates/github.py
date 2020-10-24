@@ -23,7 +23,10 @@ template.add_resource(User(
             PolicyDocument=PolicyDocument(
                 Statement=[Statement(
                     Effect=Allow,
-                    Action=[Action(prefix='acm', action='*')],
+                    Action=[
+                        Action(prefix='acm', action='*'),
+                        Action(prefix='route53', action='*'),
+                    ],
                     Resource=['*'],
                 )]
             )
