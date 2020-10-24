@@ -49,7 +49,7 @@ jobs:
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
           name: rob-kenis-dot-com
-          template: output/static_website.json
+          template: deploy/aws/output/static_website.json
   azure:
     needs: build
     runs-on: ubuntu-latest
