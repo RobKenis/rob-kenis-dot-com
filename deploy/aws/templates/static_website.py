@@ -78,7 +78,7 @@ cloudfront = template.add_resource(Distribution(
         IPV6Enabled=True,
         Origins=[Origin(
             Id='default',
-            DomainName=Join('', [Ref(s3_website_origin), '.s3-', Ref(AWS_REGION), '.amazonaws.com']),
+            DomainName=Join('', [Ref(s3_website_origin), '.s3.', Ref(AWS_REGION), '.amazonaws.com']),
             S3OriginConfig=S3OriginConfig(
                 OriginAccessIdentity=Join('', [
                     'origin-access-identity/cloudfront/',
