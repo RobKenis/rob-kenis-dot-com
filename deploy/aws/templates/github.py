@@ -17,6 +17,16 @@ template.add_resource(User(
                     Resource=['*'],
                 )]
             )
+        ),
+        Policy(
+            PolicyName='AllowACM',
+            PolicyDocument=PolicyDocument(
+                Statement=[Statement(
+                    Effect=Allow,
+                    Action=[Action(prefix='acm', action='*')],
+                    Resource=['*'],
+                )]
+            )
         )
     ]
 ))
