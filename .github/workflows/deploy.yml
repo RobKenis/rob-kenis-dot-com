@@ -3,7 +3,21 @@ name: Deploy
 on: [push]
 
 jobs:
+  build:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - run: yarn
+      - run: yarn build
+        env:
+          CI: true
   aws:
+    needs: build
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,7 +35,8 @@ jobs:
       - name: Build CloudFormation
         run: python templates/static_website.py
   azure:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Azure
-        run: echo 'Deploy to Azure'
+        run: echo 'Update Azure infrastructure'
