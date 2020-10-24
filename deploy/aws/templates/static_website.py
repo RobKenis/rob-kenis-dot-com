@@ -4,7 +4,8 @@ from troposphere import Template, ImportValue, Parameter, constants, Join, Ref, 
     AWS_REGION, Output
 from troposphere.certificatemanager import Certificate, DomainValidationOption
 from troposphere.cloudfront import Distribution, DistributionConfig, DefaultCacheBehavior, Origin, ViewerCertificate, \
-    CloudFrontOriginAccessIdentity, CloudFrontOriginAccessIdentityConfig, S3OriginConfig, ForwardedValues
+    CloudFrontOriginAccessIdentity, CloudFrontOriginAccessIdentityConfig, S3OriginConfig, ForwardedValues, \
+    CustomErrorResponse
 from troposphere.route53 import RecordSetGroup, RecordSet, AliasTarget
 from troposphere.s3 import Bucket, BucketPolicy
 
@@ -91,6 +92,13 @@ cloudfront = template.add_resource(Distribution(
             AcmCertificateArn=Ref(cloudfront_certificate),
             SslSupportMethod='sni-only',
         ),
+        CustomErrorResponses=[
+            CustomErrorResponse(
+                ErrorCode=403,
+                ResponseCode=200,
+                ResponsePagePath='/404.html'
+            ),
+        ],
     ),
 ))
 
