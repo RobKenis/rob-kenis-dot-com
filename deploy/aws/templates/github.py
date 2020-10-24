@@ -17,6 +17,39 @@ template.add_resource(User(
                     Resource=['*'],
                 )]
             )
+        ),
+        Policy(
+            PolicyName='AllowACM',
+            PolicyDocument=PolicyDocument(
+                Statement=[Statement(
+                    Effect=Allow,
+                    Action=[
+                        Action(prefix='acm', action='*'),
+                        Action(prefix='route53', action='*'),
+                    ],
+                    Resource=['*'],
+                )]
+            )
+        ),
+        Policy(
+            PolicyName='AllowS3',
+            PolicyDocument=PolicyDocument(
+                Statement=[Statement(
+                    Effect=Allow,
+                    Action=[Action(prefix='s3', action='*')],
+                    Resource=['*'],
+                )]
+            )
+        ),
+        Policy(
+            PolicyName='AllowCloudFront',
+            PolicyDocument=PolicyDocument(
+                Statement=[Statement(
+                    Effect=Allow,
+                    Action=[Action(prefix='cloudfront', action='*')],
+                    Resource=['*'],
+                )]
+            )
         )
     ]
 ))
