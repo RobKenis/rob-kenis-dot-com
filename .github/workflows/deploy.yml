@@ -54,6 +54,7 @@ jobs:
         with:
           name: rob-kenis-dot-com
           template: deploy/aws/output/static_website.json
+          no-fail-on-empty-changeset: "1"
       - name: Download Next build
         uses: actions/download-artifact@v2
         with:
