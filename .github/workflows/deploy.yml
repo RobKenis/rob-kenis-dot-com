@@ -8,26 +8,7 @@ on: [push]
 #      - master
 
 jobs:
-  build:
-    timeout-minutes: 10
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - run: yarn
-      - run: yarn build
-        env:
-          CI: true
-      - name: Archive Next build
-        uses: actions/upload-artifact@v2
-        with:
-          name: next-out
-          path: out
   aws:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -55,10 +36,14 @@ jobs:
           name: rob-kenis-dot-com
           template: deploy/aws/output/static_website.json
           no-fail-on-empty-changeset: "1"
-      - name: Download Next build
-        uses: actions/download-artifact@v2
+      - name: Build NextJs
+        uses: actions/setup-node@v1
         with:
-          name: next-out
+          node-version: '12.x'
+      - run: yarn
+      - run: yarn build
+        env:
+          CI: true
       - uses: chrislennon/action-aws-cli@v1.1
       - name: Upload website
         run: |
@@ -68,7 +53,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   azure:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Azure
