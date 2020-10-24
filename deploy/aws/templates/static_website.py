@@ -1,6 +1,7 @@
 from awacs import s3
 from awacs.aws import PolicyDocument, Policy, Statement, Allow, Principal
-from troposphere import Template, ImportValue, Parameter, constants, Join, Ref, Tags, AWS_STACK_NAME, GetAtt, AWS_REGION
+from troposphere import Template, ImportValue, Parameter, constants, Join, Ref, Tags, AWS_STACK_NAME, GetAtt, \
+    AWS_REGION, Output
 from troposphere.certificatemanager import Certificate, DomainValidationOption
 from troposphere.cloudfront import Distribution, DistributionConfig, DefaultCacheBehavior, Origin, ViewerCertificate, \
     CloudFrontOriginAccessIdentity, CloudFrontOriginAccessIdentityConfig, S3OriginConfig, ForwardedValues
@@ -131,6 +132,12 @@ template.add_resource(RecordSetGroup(
             ),
         ),
     ],
+))
+
+template.add_output(Output(
+    'WebsiteOriginBucketName',
+    Description='Name of the S3 bucket that holds the website',
+    Value=Ref(s3_website_origin),
 ))
 
 f = open("output/static_website.json", "w")
