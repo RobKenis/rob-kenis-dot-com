@@ -42,7 +42,7 @@ jobs:
       - run: yarn build
         env:
           CI: true
-      - uses: chrislennon/action-aws-cli@v1.1
+      - uses: unfor19/install-aws-cli-action@v1
       - name: Upload website
         run: |
           BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name rob-kenis-dot-com | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="WebsiteOriginBucketName") | .OutputValue')
