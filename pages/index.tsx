@@ -10,7 +10,7 @@ const App = () => (
       <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
     </Head>
     <div className={"container"}>
-      <Title title={"Rob Kenis_"}/>
+      <Title title={"Hi."}/>
     </div>
   </div>
 )
