@@ -11,17 +11,13 @@
     "test": "echo 'No tests. Nice!'"
   },
   "dependencies": {
-    "next": "^9.5.5",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.1"
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/node": "^14.14.2",
-    "@types/react": "^16.9.53",
-    "typescript": "^4.0.3"
-  },
-  "resolutions": {
-    "object-path": "^0.11.5",
-    "node-fetch": "^2.6.1"
+    "@types/node": "^16.10.3",
+    "@types/react": "^17.0.27",
+    "typescript": "^4.4.3"
   }
 }
