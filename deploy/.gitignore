@@ -1,5 +1,6 @@
 # Python
 venv/
+aws/venv/
 
 # Troposphere
-output/*.json
+aws/output/*.json
