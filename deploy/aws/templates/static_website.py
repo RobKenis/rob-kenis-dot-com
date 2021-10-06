@@ -1,13 +1,11 @@
-from awacs import s3
-from awacs.aws import PolicyDocument, Policy, Statement, Allow, Principal
 from troposphere import Template, ImportValue, Parameter, constants, Join, Ref, Tags, AWS_STACK_NAME, GetAtt, \
     AWS_REGION, Output
 from troposphere.certificatemanager import Certificate, DomainValidationOption
 from troposphere.cloudfront import Distribution, DistributionConfig, DefaultCacheBehavior, Origin, ViewerCertificate, \
-    CloudFrontOriginAccessIdentity, CloudFrontOriginAccessIdentityConfig, S3OriginConfig, ForwardedValues, \
-    CustomErrorResponse
+    ForwardedValues, \
+    CustomOriginConfig
 from troposphere.route53 import RecordSetGroup, RecordSet, AliasTarget
-from troposphere.s3 import Bucket, BucketPolicy
+from troposphere.s3 import Bucket, WebsiteConfiguration
 
 template = Template(Description="Static Website")
 
@@ -38,26 +36,10 @@ cloudfront_certificate = template.add_resource(Certificate(
 
 s3_website_origin = template.add_resource(Bucket(
     'WebsiteOrigin',
-    AccessControl='Private',
-))
-
-origin_access_identity = template.add_resource(CloudFrontOriginAccessIdentity(
-    'WebsiteOriginAccessIdentity',
-    CloudFrontOriginAccessIdentityConfig=CloudFrontOriginAccessIdentityConfig(
-        Comment=Ref(AWS_STACK_NAME),
-    ),
-))
-
-template.add_resource(BucketPolicy(
-    'WebsiteOriginPolicy',
-    Bucket=Ref(s3_website_origin),
-    PolicyDocument=Policy(
-        Statement=[Statement(
-            Effect=Allow,
-            Action=[s3.GetObject],
-            Resource=[Join('', ['arn:aws:s3:::', Ref(s3_website_origin), '/*'])],
-            Principal=Principal('CanonicalUser', GetAtt(origin_access_identity, 'S3CanonicalUserId')),
-        )],
+    AccessControl='PublicRead',
+    WebsiteConfiguration=WebsiteConfiguration(
+        IndexDocument='index.html',
+        ErrorDocument='404.html',
     ),
 ))
 
@@ -73,18 +55,14 @@ cloudfront = template.add_resource(Distribution(
                 QueryString=False,
             ),
         ),
-        DefaultRootObject='index.html',
         Enabled=True,
         HttpVersion='http2',
         IPV6Enabled=True,
         Origins=[Origin(
             Id='default',
-            DomainName=Join('', [Ref(s3_website_origin), '.s3.', Ref(AWS_REGION), '.amazonaws.com']),
-            S3OriginConfig=S3OriginConfig(
-                OriginAccessIdentity=Join('', [
-                    'origin-access-identity/cloudfront/',
-                    Ref(origin_access_identity),
-                ]),
+            DomainName=Join('', [Ref(s3_website_origin), '.s3-website-', Ref(AWS_REGION), '.amazonaws.com']),
+            CustomOriginConfig=CustomOriginConfig(
+                OriginProtocolPolicy='http-only',
             ),
         )],
         PriceClass='PriceClass_100',
@@ -92,13 +70,6 @@ cloudfront = template.add_resource(Distribution(
             AcmCertificateArn=Ref(cloudfront_certificate),
             SslSupportMethod='sni-only',
         ),
-        CustomErrorResponses=[
-            CustomErrorResponse(
-                ErrorCode=403,
-                ResponseCode=200,
-                ResponsePagePath='/404.html'
-            ),
-        ],
     ),
 ))
 
