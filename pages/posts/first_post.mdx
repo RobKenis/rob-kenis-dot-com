@@ -1,0 +1,10 @@
+import Post from '../../components/layouts/Post'
+
+export const meta = {
+  title: 'Markdown/MDX with Next.js',
+  author: 'Rob Kenis'
+}
+
+I **love** using [Next.js](https://nextjs.org/)
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>
