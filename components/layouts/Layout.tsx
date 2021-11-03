@@ -1,6 +1,7 @@
 import { Navbar } from '../elements/Navbar/Navbar';
 import Head from "next/head";
 import React from "react";
+import styles from './Layout.module.css';
 
 export default function Layout({ children }) {
   return (
@@ -11,7 +12,7 @@ export default function Layout({ children }) {
         <link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"/>
       </Head>
       <Navbar title={"Rob Kenis"}/>
-      <main>{children}</main>
+      <main className={styles.content}>{children}</main>
     </>
   )
 }
