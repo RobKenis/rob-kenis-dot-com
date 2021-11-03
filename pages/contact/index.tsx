@@ -5,7 +5,7 @@ import Layout from "../../components/layouts/Layout";
 const Contact = () => (
     <Layout>
       <div className={"container"}>
-        <Title title={"Contact."} fontSize={'10vw'}/>
+        <Title title={"Contact."} style={{fontSize: '10vw'}}/>
       </div>
     </Layout>
 )

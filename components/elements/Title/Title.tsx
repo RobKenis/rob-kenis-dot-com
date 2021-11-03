@@ -1,12 +1,12 @@
 import styles from './Title.module.css'
 
-import React from "react";
+import React, { CSSProperties } from "react";
 
 interface TitleProps {
   title: string;
-  fontSize?: string;
+  style?: CSSProperties;
 }
 
 export const Title: React.FunctionComponent<TitleProps> = (props) => (
-  <h1 style={{ fontSize: props.fontSize }} className={styles.title}>{props.title}</h1>
+  <h1 style={props.style} className={styles.title}>{props.title}</h1>
 );
