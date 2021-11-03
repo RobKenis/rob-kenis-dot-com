@@ -1,26 +1,32 @@
 import Layout from "./Layout";
 import { Title } from "../elements/Title/Title";
-import { Row } from "antd";
-import styles from './Post.module.css';
+import { Col, Row } from "antd";
 import { PostedBy } from "../elements/PostedBy/PostedBy";
 import { CSSProperties } from "react";
+
+const BREAKPOINT_LG = 8;
+const BREAKPOINT_MD = 10;
 
 const titleCSS: CSSProperties = { fontFamily: 'Lato, serif', margin: '1em 0 2em 0', fontWeight: "bold" }
 
 const Post = ({ meta, children }) => {
   return (
     <Layout>
-      <div className={styles.post}>
-        <Row>
+      <Row justify={"center"}>
+        <Col lg={BREAKPOINT_LG} md={BREAKPOINT_MD}>
           <PostedBy author={meta.author} created={meta.created}/>
-        </Row>
-        <Row>
+        </Col>
+      </Row>
+      <Row justify={"center"}>
+        <Col lg={BREAKPOINT_LG} md={BREAKPOINT_MD}>
           <Title title={meta.title} style={titleCSS}/>
-        </Row>
-        <Row>
-          <main className={styles.content}>{children}</main>
-        </Row>
-      </div>
+        </Col>
+      </Row>
+      <Row justify={"center"}>
+        <Col lg={BREAKPOINT_LG} md={BREAKPOINT_MD}>
+          <main>{children}</main>
+        </Col>
+      </Row>
     </Layout>
   )
 }
