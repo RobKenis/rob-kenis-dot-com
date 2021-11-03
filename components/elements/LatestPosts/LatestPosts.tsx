@@ -20,6 +20,7 @@ const LatestPost: React.FunctionComponent<PostProps> = (props) => (
     <Card
       style={{ width: 300 }}
       cover={
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           alt="Cover photo of a kitten"
           src="https://placekitten.com/200/200"
@@ -36,7 +37,7 @@ const LatestPost: React.FunctionComponent<PostProps> = (props) => (
 );
 
 export const LatestPosts: React.FunctionComponent<LatestPostsProps> = (props) => (
-  <div style={{display: "flex"}}>
+  <div style={{ display: "flex" }}>
     {props.posts.map(post => (
       <LatestPost key={post.title} title={post.title} link={post.link} created={post.created}/>))}
   </div>
