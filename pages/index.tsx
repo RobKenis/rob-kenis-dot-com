@@ -5,7 +5,7 @@ import Layout from "../components/layouts/Layout";
 const App = () => (
   <Layout>
     <div className={"container"}>
-      <Title title={"Hi."} style={{fontSize: '10vw'}}/>
+      <Title title={"Hi."} style={{ fontSize: '10vw' }}/>
     </div>
   </Layout>
 )
