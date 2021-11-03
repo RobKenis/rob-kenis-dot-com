@@ -23,7 +23,7 @@ const LatestPost: React.FunctionComponent<PostProps> = (props) => (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           alt="Cover photo of a kitten"
-          src="https://placekitten.com/200/200"
+          src={`https://placekitten.com/450/450?image=${Math.floor(Math.random() * 15) + 1}`}
         />
       }
     >
