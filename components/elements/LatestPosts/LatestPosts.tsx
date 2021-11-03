@@ -37,7 +37,7 @@ const LatestPost: React.FunctionComponent<PostProps> = (props) => (
 );
 
 export const LatestPosts: React.FunctionComponent<LatestPostsProps> = (props) => (
-  <div style={{ display: "flex" }}>
+  <div style={{ display: "flex", flexWrap: 'wrap' }}>
     {props.posts.map(post => (
       <LatestPost key={post.title} title={post.title} link={post.link} created={post.created}/>))}
   </div>
