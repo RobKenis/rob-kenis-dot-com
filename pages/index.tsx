@@ -1,18 +1,13 @@
-import Head from 'next/head';
 import React from 'react';
 import {Title} from "../components/elements/Title/Title";
+import Layout from "../components/layouts/Layout";
 
 const App = () => (
-  <div>
-    <Head>
-      <title>Rob Kenis</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
-    </Head>
+  <Layout>
     <div className={"container"}>
-      <Title title={"Hi."}/>
+      <Title title={"Hi."} fontSize={'10vw'}/>
     </div>
-  </div>
+  </Layout>
 )
 
 export default App;
