@@ -2,6 +2,9 @@
 
 > My very own homepage on the internet
 
+![Validate](https://github.com/RobKenis/rob-kenis-dot-com/actions/workflows/validate.yml/badge.svg)
+![Deploy](https://github.com/RobKenis/rob-kenis-dot-com/actions/workflows/deploy.yml/badge.svg)
+
 ## Developing
 
 ```shell
