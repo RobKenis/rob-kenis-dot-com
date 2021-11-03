@@ -1,4 +1,4 @@
-const Post = ({meta, children}) => {
+const Post = ({ meta, children }) => {
   return (
     <>
       <h1>{meta.title}</h1>
