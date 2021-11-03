@@ -1,20 +1,29 @@
-# rob-kenis-dot-com
+# Hello
 
 > My very own homepage on the internet
 
-## Build Setup
+## Developing
 
-``` bash
-# install dependencies
+```shell
+# Install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
+# Serve with hot reload at localhost:3000
 $ yarn dev
+```
 
-# build for production and launch server
+## Deploying
+
+When new commits are pushed to `master`, the website is deployed using 
+_GitHub Actions_. To build locally, run following commands
+
+```shell
 $ yarn build
-$ yarn start
+```
 
-# generate static project
-$ yarn generate
+## Storybook
+
+```shell
+# Run storybook on port 6006
+$ yarn storybook
 ```
