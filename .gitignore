@@ -14,3 +14,7 @@ node_modules/
 
 # Jest
 coverage/
+
+# Hugo
+**/.hugo_build.lock
+blog/out/

@@ -30,3 +30,21 @@ $ yarn build
 # Run storybook on port 6006
 $ yarn storybook
 ```
+
+## Blog
+
+The blog section is created using [hugo](https://gohugo.io).
+```shell
+# Create a new post
+$ hugo new posts/my-new-post.md
+```
+
+```shell
+# Start the server with drafts enabled
+$ hugo server -D
+```
+
+```shell
+# Build static pages
+$ hugo -D
+```
