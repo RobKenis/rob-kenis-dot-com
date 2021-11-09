@@ -41,8 +41,11 @@ $ hugo new posts/my-new-post.md
 
 ```shell
 # Start the server with drafts enabled
-$ hugo server -D
+$ HUGO_UGLYURLS=true hugo server -D
 ```
+It is important to enable ugly URLs when running locally. This is also the way that the site is deployed, so links
+are adapted to append the extension. When running locally without ugly URLS, the menu will break.
+- [ ] TODO: Make pretty URLs work in S3/CloudFront.
 
 ```shell
 # Build static pages
