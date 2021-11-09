@@ -1,3 +1,0 @@
-[submodule "blog/themes/parsa"]
-	path = blog/themes/parsa
-	url = git@github.com:themefisher/parsa-hugo.git
