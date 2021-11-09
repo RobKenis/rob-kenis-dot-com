@@ -45,19 +45,17 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.85.0'
+          hugo-version: '0.89.2'
       - name: Build Hugo
-        run: hugo --minify
-        working-directory: blog/
+        run: hugo -s blog/ -d out/
       - uses: unfor19/install-aws-cli-action@v1
       - name: Upload website
         run: |
           BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name rob-kenis-dot-com | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="WebsiteOriginBucketName") | .OutputValue')
-          aws s3 sync out/ s3://$BUCKET_NAME/
+          aws s3 sync blog/out/ s3://$BUCKET_NAME/
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        working-directory: blog/ # Deploy Hugo until the NextJS blog is finished
   azure:
     runs-on: ubuntu-latest
     steps:
