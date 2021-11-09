@@ -12,6 +12,9 @@ googleAnalytics = "" # example : UA-123-45
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
+# build
+publishdir = './out/'
+
 [markup.goldmark.renderer]
 unsafe= true
 
