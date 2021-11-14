@@ -5,7 +5,7 @@ from troposphere import Template, ImportValue, Parameter, constants, Join, Ref, 
 from troposphere.certificatemanager import Certificate, DomainValidationOption
 from troposphere.cloudfront import Distribution, DistributionConfig, DefaultCacheBehavior, Origin, ViewerCertificate, \
     CloudFrontOriginAccessIdentity, CloudFrontOriginAccessIdentityConfig, S3OriginConfig, ForwardedValues, \
-    CustomErrorResponse
+    CustomErrorResponse, Function, FunctionConfig, FunctionAssociation
 from troposphere.route53 import RecordSetGroup, RecordSet, AliasTarget
 from troposphere.s3 import Bucket, BucketPolicy
 
@@ -61,6 +61,18 @@ template.add_resource(BucketPolicy(
     ),
 ))
 
+with open('./code/pretty_urls.js', mode='r') as code:
+    pretty_urls_function = template.add_resource(Function(
+        'PrettyURLs',
+        Name=Join('-', [Ref(AWS_STACK_NAME), 'rewrite-pretty-urls']),
+        AutoPublish=True,
+        FunctionCode=code.read(),
+        FunctionConfig=FunctionConfig(
+            Comment='Enable pretty URLs for Hugo',
+            Runtime=' cloudfront-js-1.0',
+        ),
+    ))
+
 cloudfront = template.add_resource(Distribution(
     'CloudFront',
     DistributionConfig=DistributionConfig(
@@ -72,8 +84,11 @@ cloudfront = template.add_resource(Distribution(
             ForwardedValues=ForwardedValues(
                 QueryString=False,
             ),
+            FunctionAssociations=[FunctionAssociation(
+                EventType='viewer-request',
+                FunctionARN=GetAtt(pretty_urls_function, 'FunctionARN'),
+            )],
         ),
-        DefaultRootObject='index.html',
         Enabled=True,
         HttpVersion='http2',
         IPV6Enabled=True,
