@@ -69,7 +69,7 @@ with open('./code/pretty_urls.js', mode='r') as code:
         FunctionCode=code.read(),
         FunctionConfig=FunctionConfig(
             Comment='Enable pretty URLs for Hugo',
-            Runtime=' cloudfront-js-1.0',
+            Runtime='cloudfront-js-1.0',
         ),
     ))
 
