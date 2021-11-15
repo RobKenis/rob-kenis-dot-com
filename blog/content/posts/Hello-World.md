@@ -33,6 +33,24 @@ labore et dolore magnam aliquam quaerat voluptatem.
 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
 
+```java
+public class Person {
+    // This is a comment
+    private final String name;
+    
+    public Person(String name){
+        this.name = name;
+    }
+
+    /**
+     * This is how javadoc formats
+     * @return The name of the person
+     */
+    public String getName(){
+        return this.name;
+    }
+}
+```
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
