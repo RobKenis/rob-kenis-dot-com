@@ -72,7 +72,6 @@ with open('./code/pretty_urls.js', mode='r') as code:
             Runtime='cloudfront-js-1.0',
         ),
     ))
-
 cloudfront = template.add_resource(Distribution(
     'CloudFront',
     DistributionConfig=DistributionConfig(
@@ -88,6 +87,9 @@ cloudfront = template.add_resource(Distribution(
                 EventType='viewer-request',
                 FunctionARN=GetAtt(pretty_urls_function, 'FunctionARN'),
             )],
+            MinTTL=0,
+            DefaultTTL=3600,
+            MaxTTL=3600,
         ),
         Enabled=True,
         HttpVersion='http2',
@@ -116,6 +118,7 @@ cloudfront = template.add_resource(Distribution(
         ],
     ),
 ))
+
 
 template.add_resource(RecordSetGroup(
     'DnsRecords',
