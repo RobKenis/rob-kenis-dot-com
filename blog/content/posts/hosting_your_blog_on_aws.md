@@ -17,8 +17,8 @@ As I didn't really think about user interaction, my requirements were limited:
 As a software developer, the next step is easy. You pick an existing framework, write your first post and deploy your
 site to the first hosting solution that comes to mind. Just kidding…you try writing everything from scratch. So I set
 up an empty project with NextJS, added the required Markdown extensions to store my posts in git. And then the first 
-problems started popping up, the Markdown was showing in a weird way, my CSS skills are far below par, and I noticed 
-I was going on and adventure I never intended to be in. Time to rethink some steps and grab something off the shelf.
+problems started popping up, the Markdown was showing in a weird way, my CSS skills were far below par, and I noticed 
+I was going on and adventure I never intended to go on. Time to rethink some steps and grab something off the shelf.
 
 ### Introducing Hugo
 
@@ -77,7 +77,7 @@ $ hugo server -D
 
 #### Building the project
 
-To deploy the blog in the most simple way, we need a simple *HTML, CSS and JS* files. We need those files, so we can
+To deploy the blog in the most simple way, we need simple *HTML, CSS and JS* files. We need those files, so we can
 deploy the site on solutions like *AWS S3*, *Azure Blog Storage* or even *GitHub Pages*. To build the site, simply use
 
 ```shell
