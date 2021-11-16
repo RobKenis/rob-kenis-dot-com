@@ -300,7 +300,7 @@ body {
 
 ol,
 ul {
-  list-style-type: none;
+  list-style-type: circle;
   margin: 0px;
 }
 

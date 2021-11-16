@@ -4,3 +4,4 @@ aws/venv/
 
 # Troposphere
 aws/output/*.json
+aws/output/*.yaml

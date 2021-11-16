@@ -4,6 +4,7 @@ date: 2021-11-09T19:00:00+01:00
 description: "Hello, this is me"
 type: "post"
 image: "images/posts/hello-world.jpg"
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
