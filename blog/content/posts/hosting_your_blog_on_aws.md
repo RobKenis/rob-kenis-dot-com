@@ -11,8 +11,8 @@ bonus points if the solution was easy with zero maintenance.
 
 After writing my first blog post back in 2019, I started thinking about creating a personal blog. Sounds great, a place
 on the internet to write down my thoughts on various topics, so maybe one day someone else could find it useful.
-As I didn't really think about user interaction, my requirements were limited: 
-*Cheap, zero maintenance, everything in git*
+As I didn't really think about user interaction, the only things I had to
+keep in mind were *low cost, zero maintenance and everything in git*.
 
 As a software developer, the next step is easy. You pick an existing framework, write your first post and deploy your
 site to the first hosting solution that comes to mind. Just kidding…you try writing everything from scratch. So I set
