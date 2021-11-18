@@ -21,9 +21,9 @@ I was unhappy with the need for extensions in my URLs.
 
 ### AWS Lambda to the rescue
 
-There is another way to manipulate the URLs, a way in which the user won't even notice. Why don't we intercept
-the request before it reaches S3 and append `/index.html` to all URLs that need it? This would mean clean URLs
-for the user that point to actual files in S3. 
+There is another way to manipulate the URLs, a way in which the user won't even notice. Why don't we 
+intercept the request before it reaches S3 and append `/index.html` to all URLs that need it? This would 
+mean clean URLs for the user that point to actual files in S3. 
 
 Obviously I wasn't the first one to come up with this solution. Years ago, AWS introduced 
 [Lambda @ Edge](https://aws.amazon.com/lambda/edge), a solution that enables you to execute serverless
@@ -64,7 +64,7 @@ to the URI, so it points to the correct file in S3.
 
 Now we have our logic inside a Lambda function. All that is left, is attaching it to our CloudFront. In the 
 same fashion as the previous post, I'll share the CloudFormation snippet below. The following CloudFormation
-resource will create a CloudFront Function. For now the only runtime available is `cloudfornt-js-1.0`. To me,
+resource will create a CloudFront Function. For now the only runtime available is `cloudfront-js-1.0`. To me,
 this looks like very old JavaScript, so no *const* and *let* yet. To view your function, head over
 to the CloudFront console and find 'CloudFront Functions' in the menu on the left side.
 
@@ -99,7 +99,8 @@ This will only create the CloudFront Function, but without configuring it, it wi
 it to a Distribution, we must configure it like any Lambda @ Edge function. We must pick an `EventType`, and
 this is where CloudFront Functions are limited. Out of the 4 options, we can only pick `viewer-request`
 and `viewer-response`, so no modifying the request between the Distribution and the Origin during the 
-`origin-request` and `origin-response` events.
+`origin-request` and `origin-response` events. Next to the EventType, we must pass the reference to our
+CloudFront Function using the ARN.
 
 ```yaml
 Resources:
