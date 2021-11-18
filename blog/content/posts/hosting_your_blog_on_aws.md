@@ -196,5 +196,5 @@ CloudFront cache to expire.
 
 Hugo in combination with AWS S3 and CloudFront is a quick and easy way to get started with a personal website. There
 are still some TODOs which I'll cover in another post:
-- Pretty URLs
+- [Pretty URLs]({{< ref "/posts/hugo_pretty_urls_on_aws" >}})
 - A custom domain
