@@ -59,7 +59,7 @@ function handler(event) {
 ```
 
 When an event of type [CloudFrontRequest](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/common/cloudfront.d.ts#L44) is received,
-the URI is takes from the input. When the URI ends with a `/` or has no extension, `/index.html` is added
+the URI is taken from the input. When the URI ends with a `/` or has no extension, `/index.html` is added
 to the URI, so it points to the correct file in S3.
 
 Now we have our logic inside a Lambda function. All that is left, is attaching it to our CloudFront. In the 
