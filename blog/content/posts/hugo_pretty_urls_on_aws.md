@@ -36,7 +36,7 @@ Great solution, but can be improved on!
 
 And here we are, a couple of months after Lambda @ Edge was possible, the process to execute functions at the
 edge was made simpler. Back in May 2021, AWS introduced [CloudFront Functions](https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/), a
-solution that provides the option to write small, fast functions that execute when a user arrives are your CDN.
+solution that provides the option to write small, fast functions that execute when a user arrives at your CDN.
 
 #### Creating a function
 
