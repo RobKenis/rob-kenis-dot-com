@@ -108,6 +108,7 @@ cloudfront = template.add_resource(Distribution(
         ViewerCertificate=ViewerCertificate(
             AcmCertificateArn=Ref(cloudfront_certificate),
             SslSupportMethod='sni-only',
+            MinimumProtocolVersion='TLSv1.2_2021',
         ),
         CustomErrorResponses=[
             CustomErrorResponse(
