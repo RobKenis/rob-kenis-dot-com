@@ -19,3 +19,6 @@ coverage/
 **/.hugo_build.lock
 blog/out/
 blog/public/
+
+# Asciidoc
+learn/.build/

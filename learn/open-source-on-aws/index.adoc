@@ -1,0 +1,28 @@
+== Open Source on AWS
+
+=== Getting started
+
+Axxes accounts are managed through Active Directory. In the top left corner in Office365, search for an application
+called **AWS SSO**. A menu should show up with all available accounts, choose **traineeship-2022**.
+
+In the top right corner in the AWS Console, there's a dropdown with available regions. Choose **eu-west-1**.
+
+In the top left corner, open **services** for an overview of available services in AWS.
+
+To install the AWS CLI, use the instructions https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html[here].
+
+=== Setting up a server
+
+=== Infrastructure as Code
+
+=== Ansible on AWS
+
+=== AWS Elastic Beanstalk
+
+=== DNS
+
+=== Containers on AWS
+
+=== S3
+
+=== AWS Lambda

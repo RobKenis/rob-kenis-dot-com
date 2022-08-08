@@ -1,4 +1,4 @@
-name: 'Deploy Blog'
+name: 'Deploy Learn'
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build CloudFormation
         working-directory: ./deploy/aws
-        run: python templates/static_website.py
+        run: python templates/even_more_static_website.py
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -31,25 +31,18 @@ jobs:
       - name: Deploy CloudFormation
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          name: rob-kenis-dot-com
-          template: deploy/aws/output/static_website.json
+          name: learn-dot-rob-kenis-dot-com
+          template: deploy/aws/output/even_more_static_website.json
           no-fail-on-empty-changeset: "1"
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Build Asciidoc
+        uses: tonynv/asciidoctor-action@master
         with:
-          hugo-version: '0.89.2'
-      - name: Build Hugo
-        run: hugo -s blog/ -d out/
+          program: "asciidoctor learn/index.adoc -D learn/.build/"
       - uses: unfor19/install-aws-cli-action@v1
       - name: Upload website
         run: |
-          BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name rob-kenis-dot-com | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="WebsiteOriginBucketName") | .OutputValue')
-          aws s3 sync blog/out/ s3://$BUCKET_NAME/
+          BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name learn-dot-rob-kenis-dot-com | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="WebsiteOriginBucketName") | .OutputValue')
+          aws s3 sync learn/.build/ s3://$BUCKET_NAME/
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  azure:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Azure
-        run: echo 'Update Azure infrastructure'
