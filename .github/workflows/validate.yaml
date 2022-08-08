@@ -1,0 +1,17 @@
+name: 'Validate'
+
+on: [ pull_request ]
+
+jobs:
+  cloudformation:
+    runs-on: ubuntu-latest
+    name: 'Validate CloudFormation'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Python Linter
+        uses: sunnysid3up/python-linter@master
+        with:
+          source: "deploy/aws/templates"
+          mypy-options: "--ignore-missing-imports --show-error-codes"
+          pylint-options: "--rcfile=setup.cfg"
+          isort-options: "-w 100"
