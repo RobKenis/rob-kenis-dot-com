@@ -4,6 +4,7 @@
 
 ![Validate](https://github.com/RobKenis/rob-kenis-dot-com/actions/workflows/validate.yaml/badge.svg)
 ![Deploy](https://github.com/RobKenis/rob-kenis-dot-com/actions/workflows/deploy.yaml/badge.svg)
+![Deploy](https://github.com/RobKenis/rob-kenis-dot-com/actions/workflows/learn.yaml/badge.svg)
 
 ## Blog
 
