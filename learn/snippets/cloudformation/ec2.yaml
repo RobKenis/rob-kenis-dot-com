@@ -1,0 +1,33 @@
+---
+Description: Single ec2 instance
+Parameters:
+  KeyPair:
+    Description: Name of the keypair
+    Type: "AWS::EC2::KeyPair::KeyName"
+  InstanceName:
+    Description: Name of the instance
+    Type: "String"
+Resources:
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow SSH and HTTP
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+  Ec2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: 'ami-089950bc622d39ed8'
+      InstanceType: 't2.nano'
+      KeyName: !Ref KeyPair
+      SecurityGroupIds: [!Ref SecurityGroup]
+      Tags:
+        - Key: 'Name'
+          Value: !Ref InstanceName

@@ -19,20 +19,22 @@ To install the AWS CLI, use the instructions https://docs.aws.amazon.com/cli/lat
 
 - Go to the **EC2** console
 - Pick **launch instance**, it should be a bright orange button.
+- Fill in the **Name** field, this will set the **name** tag on the server.
 - Select an AMI, for this session, we will use **Amazon Linux 2 AMI (HVM), SSD Volume Type**
 - Pick an instance type, it doesn't have to be big, **t2.micro** will work just fine
-- Make sure a public IP will be assigned
-- No need to add storage
-- Add a tag with your name, e.g. **Name: Rob**
+- Create a new key pair -> enter a unique name -> choose type **RSA** and format **.pem**
+- Make sure a public IP will be assigned, this is enabled by default
 - Add a security group with access to port **22** from **0.0.0.0/0**
-- Click launch and a pop-up will appear.
-Create a new key-pair and download it.
-- Confirm and the instance will start
+- Launch the instance!
 
+.Show CLI command to launch an instance
+[%collapsible]
+====
 [source,shell]
 ----
-$ aws ec2 run-instances --image-id ami-02b4e72b17337d6c1 --instance-type t2.nano --key-name rob --region eu-west-1
+$ aws ec2 run-instances --image-id ami-089950bc622d39ed8 --instance-type t2.micro --key-name rob --region eu-west-1
 ----
+====
 
 === Connecting to the EC2 instance
 
@@ -45,6 +47,20 @@ $ ssh -i <key>.pem ec2-user@<public-ip>
 ----
 
 === Infrastructure as Code
+
+CloudFormation is the AWS solution to do infrastructure as code. Instead of manually configuring resources,
+you can define these in YAML or JSON format and apply these configurations in the CloudFormation console.
+
+The configuration template for the EC2 instance we just set up, can be found in link:../snippets/cloudformation/ec2.yaml[ec2.yaml].
+
+.Click to expand
+[%collapsible]
+====
+[source, yaml]
+----
+include::../snippets/cloudformation/ec2.yaml[]
+----
+====
 
 === Ansible on AWS
 
