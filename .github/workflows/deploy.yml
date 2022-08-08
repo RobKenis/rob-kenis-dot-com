@@ -34,14 +34,6 @@ jobs:
           name: rob-kenis-dot-com
           template: deploy/aws/output/static_website.json
           no-fail-on-empty-changeset: "1"
-#      - name: Build NextJs
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: '12.x'
-#      - run: yarn
-#      - run: yarn build
-#        env:
-#          CI: true
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
