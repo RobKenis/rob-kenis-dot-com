@@ -4,10 +4,11 @@ image: images/posts/building-with-quantum-ledger-database/index.png
 date: 2019-12-05T12:01:37+01:00
 tags: aws-reinvent-2019
 type: "post"
-draft: true
 ---
 
-Last year at re:Invent, [Quantum Ledger Database](https://aws.amazon.com/qldb/) was announced. Amazon QLDB is a fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log ‎owned by a central trusted authority. In today's workshop, no Python will be used, we're writing Java today. *Yay for curly braces!*
+Last year at re:Invent, [Quantum Ledger Database](https://aws.amazon.com/qldb/) was announced. Amazon QLDB is a 
+fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log 
+owned by a central trusted authority. In today's workshop, no Python will be used, we're writing Java today. *Yay for curly braces!*
 
 ## QLDB fundamentals
 The typical database log is hidden for the user, it is used for system things like recovery. It is not immutable, it can be modified by people on the operations team for example. QLDB took a different view on this, they use an append-only journal. You can insert any document model you want since QLDB is a NoSQL database. The inserted documents are appended to the end of the journal as a block. The block also included system information like the date the block was added. This information is also queryable. Whem you first insert a document, it is assigned version 0. When you update the document, the version is increased. When you delete it, the deletion is recorded as a transaction as well.
@@ -31,7 +32,7 @@ QLDB generates a sha256 for each document. Use the API of QLDB to verify the doc
 ## QLDB Streaming **NEW**
 Ingest QLDB streams into Kinesis, process it directly with Lambda. Comparable to DynamoDB streams.
 
-{% asset_img summary.jpg "Building applications on Amazon QLDB" %}
+![Building applications on Amazon QLDB](/images/posts/building-with-quantum-ledger-database/summary.jpg)
 
 ### Useful resources
 - [PartiQL](https://aws.amazon.com/blogs/opensource/announcing-partiql-one-query-language-for-all-your-data/)
