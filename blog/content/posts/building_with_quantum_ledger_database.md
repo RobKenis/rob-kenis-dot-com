@@ -4,6 +4,7 @@ image: images/posts/building-with-quantum-ledger-database/index.png
 date: 2019-12-05T12:01:37+01:00
 tags: aws-reinvent-2019
 type: "post"
+draft: true
 ---
 
 Last year at re:Invent, [Quantum Ledger Database](https://aws.amazon.com/qldb/) was announced. Amazon QLDB is a 

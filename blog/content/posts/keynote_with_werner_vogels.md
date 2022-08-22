@@ -1,21 +1,21 @@
 ---
 title: Keynote with Werner Vogels
-image: images/posts/keynote-with-werner-vogels/index.jpeg
+image: images/posts/keynote-with-werner-vogels/index.jpg
 date: 2019-12-05T08:18:36+01:00
 tags: aws-reinvent-2019
 type: "post"
-draft: true
 ---
 
-Expectations are high, the 2018 Keynote with Werner Vogels brought us custom Lambda runtimes, Lambda layers and a million new databases. Deepracer was introduced, Amazon Forecast got announced, it was an overall amazing experience. So we got up early, got our breakfast burrito and buckled up for the ride.
+Expectations are high, the 2018 Keynote with Werner Vogels brought us a lot. Custom Lambda runtimes, Lambda layers and a million new databases. Deepracer was introduced, Amazon Forecast got announced, it was an overall amazing experience. So we got up early, got our breakfast burrito and buckled up for the ride.
 
 > There's no compression algorithm for experience - Werner Vogels' T-Shirt team, 2019
-
 > Sometimes innovation is about focussing on the things that will never change for your customers - Jeff Bezos
 
 ## Virtualization
 The bread and butter of the compute parts from day one. Classical virtualization has been around for a long time. x86 has come to life by major research at Stanford and revolutionized the virtualization landscape. We really pushed boundaries of virtualization over time, but we're still stuggling with a couple of issues. All guest OS's are fighting for the host resources, especially for network. Guests would see network jitter because they're fighting for the same network. AWS Nitro reinvented the virtualization to solve these problems, and reduce virtualization overhead. Amazon took the lessons they learned in software and applied them to hardware.
 Microservices are the small building blocks that you can quickly improve on, it's time to bring these to hardware.
+
+![Amazon builders library](/images/posts/keynote-with-werner-vogels/banner.jpg)
 
 ### AWS Nitro System
 Step 1: Move the network component to a separate card, the first thing they did in 2016. It took another 2 years to learn what happens when you offload components to a second card.
@@ -62,7 +62,7 @@ You have a number of nodes and randomly spread them over different shards. When 
 ## Building distributed systems is hard
 Amazon has been doing this the last 25 years on a scale that is unmatched. How does Amazon do this? Introducing the [Amazon Builders' Library ](https://aws.amazon.com/builders-library) **NEW**, you can now find out how Amazon had been inventing and building systems in the past and present.
 
-{% asset_img library.jpg "Amazon builders library" %}
+![Amazon builders library](/images/posts/keynote-with-werner-vogels/library.jpg)
 
 #### Saildrone
 Ocean data is scarce, because everyone is scared to gather the data. The sea is scary 👻. *Rob took a break from typing for a second*

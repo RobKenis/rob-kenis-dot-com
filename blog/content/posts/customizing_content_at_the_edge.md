@@ -1,10 +1,9 @@
 ---
 title: Customizing content delivery at the Edge
-image: images/posts/customizing-content-at-the-edge/index.jpg
+image: images/posts/customizing-content-at-the-edge/index.jpeg
 date: 2019-12-04T15:09:07+01:00
 tags: aws-reinvent-2019
 type: "post"
-draft: true
 ---
 
 <!-- Intercept request on viewer request and response and origin request and response.
@@ -105,7 +104,7 @@ https://aws.amazon.com/blogs/networking-and-content-delivery/resizing-images-wit
 https://aws.amazon.com/blogs/networking-and-content-delivery/authorizationedge-how-to-use-lambdaedge-and-json-web-tokens-to-enhance-web-application-security/
 https://aws.amazon.com/blogs/networking-and-content-delivery/category/networking-content-delivery/lambdaedge/ -->
 
-## Extra options with Lambda@EDge
+## Extra options with Lambda@Edge
 - [URL redirects](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html#lambda-examples-redirecting-examples)
 - [Dynamic routing](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html#lambda-examples-redirecting-examples)
 - [DynamoDB Global tables](https://aws.amazon.com/dynamodb/global-tables/), [developer docs](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html)
