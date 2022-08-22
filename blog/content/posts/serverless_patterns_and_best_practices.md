@@ -1,6 +1,6 @@
 ---
 title: Serverless patterns and best practices
-image: "images/posts/serverless_patterns_and_best_practices.jpg"
+image: "images/posts/serverless-patterns-and-best-practices/index.jpg"
 date: 2019-12-03T11:49:50+01:00
 tags: aws-reinvent-2019
 type: "post"

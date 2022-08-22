@@ -5,6 +5,6 @@
   "author": "Rob Kenis",
   "private": true,
   "scripts": {
-    "dev": "cd blog && hugo server -D"
+    "dev": "cd blog && hugo server"
   }
 }
