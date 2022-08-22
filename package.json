@@ -5,7 +5,6 @@
   "author": "Rob Kenis",
   "private": true,
   "scripts": {
-    "dev": "cd blog && hugo server -D",
-    "learn:build": "asciidoctor learn/index.adoc -D learn/.build/"
+    "dev": "cd blog && hugo server -D"
   }
 }
