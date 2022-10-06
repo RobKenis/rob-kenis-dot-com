@@ -1,5 +1,5 @@
 ---
-title: "Re:Factor 2022"
+title: "Re:Factor 2022 Compiled"
 date: 2022-10-06T20:14:49+02:00
 description: "The things I learned at Re:Factor 2022"
 type: "post"
