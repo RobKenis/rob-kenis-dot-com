@@ -154,3 +154,15 @@ Not saying you should do this, because it sounds horrible from a security point 
 
 Honorable mentions are [Linkerd](https://linkerd.io/), which is built for speed and security and [Cilium](https://cilium.io/),
 which is built on kernel level and requires less resources and is stupid fast.
+
+### Honorable Mentions
+
+- When creating a Machine Learning model, make sure (and I can't stress this enough) to use a complete set of training
+data. AI can become incredibly racist when giving a training set of white people (read: the majority op people working
+in IT).
+- [Influx](https://www.influxdata.com/) seems like a nice timeseries database. With up to 3 million writes per second,
+it seems ready for enterprise workloads.
+- Lightweight Kubernetes is a great solution to run a home. [k3s](https://k3s.io/) with [minio](https://min.io/) running
+on top makes a great self-hosted solution for Amazon S3.
+
+> The honorable mentions were great talks and brought new insights, but I didn't take notes, so yeah.
