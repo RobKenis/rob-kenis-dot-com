@@ -42,7 +42,7 @@ jobs:
         with:
           hugo-version: '0.89.2'
       - name: Build Hugo
-        run: hugo -s blog/ -d out/
+        run: hugo -s blog/ -d out/ --environment production
       - uses: unfor19/install-aws-cli-action@v1
       - name: Upload website
         run: |

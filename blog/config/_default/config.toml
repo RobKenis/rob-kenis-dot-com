@@ -1,5 +1,4 @@
 # default config
-baseurl = "https://robkenis.com"
 languageCode = "en-us"
 title = "Rob Kenis | Blog"
 theme = "parsa"
