@@ -4,14 +4,23 @@ on:
   push:
 
 jobs:
-  python:
+  troposphere:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Python Linter
-        uses: sunnysid3up/python-linter@master
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
         with:
-          source: "deploy/aws/templates/"
-          mypy-options: "--ignore-missing-imports --show-error-codes"
-          pylint-options: "--rcfile=setup.cfg"
-          isort-options: "-w 100"
+          python-version: 3.x
+      - name: Install dependencies
+        working-directory: ./deploy/aws
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Build CloudFormation
+        working-directory: ./deploy/aws
+        run: |
+          python templates/blog.py
+          python templates/github.py
+          python templates/guest_access.py
+          python templates/workshops.py
