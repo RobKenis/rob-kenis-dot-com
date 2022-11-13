@@ -1,5 +1,5 @@
 from awacs import s3
-from awacs.aws import PolicyDocument, Policy, Statement, Allow, Principal
+from awacs.aws import Policy, Statement, Allow, Principal
 from troposphere import Template, ImportValue, Parameter, constants, Join, Ref, Tags, AWS_STACK_NAME, GetAtt, \
     AWS_REGION, Output
 from troposphere.certificatemanager import Certificate, DomainValidationOption
@@ -9,7 +9,7 @@ from troposphere.cloudfront import Distribution, DistributionConfig, DefaultCach
 from troposphere.route53 import RecordSetGroup, RecordSet, AliasTarget
 from troposphere.s3 import Bucket, BucketPolicy
 
-template = Template(Description="Static Website")
+template = Template(Description="Static website hosting the blog for robkenis.com")
 
 dns_stack = template.add_parameter(Parameter(
     'DnsStack',
@@ -167,5 +167,5 @@ template.add_output(Output(
     Value=Ref(s3_website_origin),
 ))
 
-f = open("output/static_website.json", "w")
+f = open("output/blog.json", "w")
 f.write(template.to_json())

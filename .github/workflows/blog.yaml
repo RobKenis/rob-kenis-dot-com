@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build CloudFormation
         working-directory: ./deploy/aws
-        run: python templates/static_website.py
+        run: python templates/blog.py
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -35,7 +35,7 @@ jobs:
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
           name: rob-kenis-dot-com
-          template: deploy/aws/output/static_website.json
+          template: deploy/aws/output/blog.json
           no-fail-on-empty-changeset: "1"
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
