@@ -4,7 +4,7 @@ from troposphere.iam import User, ManagedPolicy
 from troposphere.serverless import Globals, ApiGlobals, Cors, Function, ApiEvent
 from troposphere.ssm import Parameter
 
-template = Template(Description="Provides an API to request console and cli credentials")
+template = Template(Description="Provides an API to request console and CLI credentials")
 template.set_transform('AWS::Serverless-2016-10-31')
 
 template.set_globals(globals=Globals(
