@@ -72,6 +72,7 @@ cloudfront = template.add_resource(Distribution(
             MaxTTL=3600,
         ),
         Enabled=True,
+        DefaultRootObject='index.html',
         HttpVersion='http2',
         IPV6Enabled=True,
         Origins=[Origin(
