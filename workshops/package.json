@@ -1,0 +1,9 @@
+{
+  "name": "workshops",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "docsify-cli": "^4.4.4"
+  }
+}

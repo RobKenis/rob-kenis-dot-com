@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Lambda</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<div id="app"></div>
+<script>
+    setTimeout(() => {
+        const url = `https://v5547z3wmb.execute-api.eu-west-1.amazonaws.com/Prod/`;
+        const Http = new XMLHttpRequest();
+        Http.responseType = 'json';
+        Http.open('GET', url, true);
+        Http.onload = function () {
+            const response = Http.response;
+
+            document.getElementById("console-credentials").innerHTML = `Username: <strong>${response['user']}</strong> - Password: <strong>${response['password']}</strong>`
+            document.getElementById("console-link").href = response['loginUrl']
+
+            document.getElementsByClassName("aws-cli-code-bash")[0].innerHTML = document.getElementsByClassName("aws-cli-code-bash")[0].innerHTML
+                .replace("ACCESS_KEY_PLACEHOLDER", response['accessKey'])
+                .replace("SECRET_KEY_PLACEHOLDER", response['secretKey'])
+
+            document.getElementsByClassName("aws-cli-code-powershell")[0].innerHTML = document.getElementsByClassName("aws-cli-code-powershell")[0].innerHTML
+                .replace("ACCESS_KEY_PLACEHOLDER", response['accessKey'])
+                .replace("SECRET_KEY_PLACEHOLDER", response['secretKey'])
+        };
+        Http.send(null);
+    }, 2000);
+
+    window.$docsify = {
+        name: 'AWS Lambda',
+        repo: 'https://github.com/RobKenis/rob-kenis-dot-com'
+    }
+</script>
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+</body>
+</html>
