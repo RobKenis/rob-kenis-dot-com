@@ -1,0 +1,41 @@
+.aws-button {
+    border-collapse: separate;
+    border-spacing: 0;
+    caption-side: top;
+    direction: ltr;
+    empty-cells: show;
+    font-style: normal;
+    font-variant: normal;
+    font-stretch: normal;
+    hyphens: none;
+    list-style: disc outside none;
+    tab-size: 8;
+    text-align: left;
+    text-align-last: auto;
+    text-indent: 0;
+    text-shadow: none;
+    text-transform: none;
+    visibility: visible;
+    white-space: normal;
+    word-spacing: normal;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "Amazon Ember", "Helvetica Neue", Roboto, Arial, serif;
+    word-break: break-word;
+    font-weight:700;
+    letter-spacing: 0.25px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.orange-aws-button {
+    background: #eb5f07;
+    color: #ffffff;
+    border: solid #eb5f07;
+}
+
+.white-aws-button {
+    background-color: #fff;
+    border-color: #545b64;
+    color: #545b64;
+}

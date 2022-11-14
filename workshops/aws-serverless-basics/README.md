@@ -78,6 +78,27 @@ or backend service without provisioning or managing servers.
 
 ## Creating your first Lambda
 
+In the [Lambda Console](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions), use the <button class="orange-aws-button aws-button">Create function</button>
+to create a new Lambda Function.
+
+When creating a new Lambda Function, 3 properties are important: **Function name**, **Runtime** and **Execution role**.
+For the function name, choose whatever you like, but make sure it is unique (e.g. your name). For the Lambda Runtime, 
+we will be working with `Node.js 16.x`, all available runtimes are documented [here](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html).
+For **Execution role**, use the `Use an existing role` option and select the `workshop-lambda-execution` role. This role
+has permissions to start the Lambda and log the output to [AWS CloudWatch](https://aws.amazon.com/cloudwatch/).
+
+<details>
+  <summary>This is what it should look like!</summary>
+
+<img src="img/create-lambda.png" alt="Create an AWS Lambda"/>
+</details>
+
+After creating the Function, you can use the <button class="orange-aws-button aws-button">Test</button> button to execute your
+Function. In the results from a test, you can see the response your Function returned and the logs it produced.
+
+Now change the code to the following snippet, use the <button class="white-aws-button aws-button">Deploy</button> button to
+update your code and test again. The response from your Function should have changed to reflect the new message.
+
 ```javascript
 exports.handler =  async function(event, context) {
     return {
