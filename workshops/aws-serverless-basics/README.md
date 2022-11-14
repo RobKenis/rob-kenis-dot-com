@@ -129,6 +129,8 @@ for this workshop, we can go with **HTTP API**. As Security configuration, choos
 unauthenticated users can access the API. That's it, use the <button class="orange-aws-button aws-button">Add</button> button
 to create the API Endpoint.
 
+?> When creating API Endpoints using the Console, the default request method is _ANY_, so it accepts both _GET_ and _POST_ requests.
+
 After the API is created, you can use the **API Endpoint** to call your Function using `curl` or [Postman](https://www.postman.com/).
 
 ```shell
@@ -141,7 +143,37 @@ curl https://09ntvi2i7h.execute-api.eu-west-1.amazonaws.com/default/robs-first-l
 
 ## What is DynamoDB?
 
-Amazon DynamoDB is a fully managed, serverless, key-value NoSQL database designed to run high-performance applications. 
+Amazon DynamoDB is a fully managed, serverless, key-value NoSQL database designed to run high-performance applications.
+
+## Using the DynamoDB SDK
+
+We can use the [AWS SDK](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html) to interact with DynamoDB.
+A table is already provisioned with the name `to-do-items`. Following code shows how to retrieve items from DynamoDB.
+You can update your Lambda code to try it out. It uses the [Scan](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html#scan-property)
+operation. You can use this in the solution later on, as well as the [PutItem](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html#putItem-property)
+and the [UpdateItem](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html#updateItem-property) operation.
+
+```javascript
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+
+exports.handler = async function (event, context) {
+    const {Items: items} = await dynamodb.scan({TableName: 'to-do-items'}).promise();
+    return {
+        statusCode: 200,
+        body: JSON.stringify({
+            items: items.map(item => ({id: item.id.S, completed: item.completed.BOOL})),
+        }),
+    }
+}
+```
+
+## View your items
+
+In the [DynamoDB Console](https://eu-west-1.console.aws.amazon.com/dynamodbv2/home?region=eu-west-1#tables), there is an
+overview of all tables in the selected region. When you select a table, for example `to-do-items`, use the
+<button class="orange-aws-button aws-button">Explore table items</button> button to view all items in the table. By default,
+this performs the same `Scan` operation as the code snippet above.
 
 # Let's build something
 
