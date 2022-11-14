@@ -84,13 +84,14 @@ to create a new Lambda Function.
 When creating a new Lambda Function, 3 properties are important: **Function name**, **Runtime** and **Execution role**.
 For the function name, choose whatever you like, but make sure it is unique (e.g. your name). For the Lambda Runtime, 
 we will be working with `Node.js 16.x`, all available runtimes are documented [here](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html).
-For **Execution role**, use the `Use an existing role` option and select the `workshop-lambda-execution` role. This role
-has permissions to start the Lambda and log the output to [AWS CloudWatch](https://aws.amazon.com/cloudwatch/).
+For **Execution role**, use the `Use an existing role` option and select the `workshop-lambda-execution` role. [IAM](https://aws.amazon.com/iam/)
+roles and policies are used to grant permissions to Users and Services on AWS. This role has permissions to start the 
+Lambda and log the output to [AWS CloudWatch](https://aws.amazon.com/cloudwatch/).
 
 <details>
   <summary>This is what it should look like!</summary>
 
-<img src="img/create-lambda.png" alt="Create an AWS Lambda"/>
+![Create an AWS Lambda](img/create-lambda.png)
 </details>
 
 After creating the Function, you can use the <button class="orange-aws-button aws-button">Test</button> button to execute your
@@ -120,6 +121,21 @@ thousands of concurrent API calls, including traffic management, CORS support, a
 throttling, monitoring, and API version management.
 
 ## Exposing your first endpoint
+
+In the Lambda Console, use the <button class="white-aws-button aws-button">+ Add Trigger</button> button to add API Gateway
+as the trigger for the Lambda Function. As a Source, select `API Gateway` and pick `Create a new API`. When creating a 
+type, you have the choice between [HTTP API and REST API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html),
+for this workshop, we can go with **HTTP API**. As Security configuration, choose **Open** as we don't mind that 
+unauthenticated users can access the API. That's it, use the <button class="orange-aws-button aws-button">Add</button> button
+to create the API Endpoint.
+
+After the API is created, you can use the **API Endpoint** to call your Function using `curl` or [Postman](https://www.postman.com/).
+
+```shell
+curl https://09ntvi2i7h.execute-api.eu-west-1.amazonaws.com/default/robs-first-lambda-function
+```
+
+![Lambda Triggers](img/lambda-triggers.png)
 
 # Amazon DynamoDB
 
