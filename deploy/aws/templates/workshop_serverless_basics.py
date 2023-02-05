@@ -18,7 +18,8 @@ template.add_resource(Role(
     RoleName='workshop-lambda-execution',
     Description=Ref(AWS_STACK_NAME),
     ManagedPolicyArns=[
-        'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+        'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole',
+        'arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess',
     ],
     Policies=[Policy(
         PolicyName='use-dynamodb',
