@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "serve aws-serverless-basics/"
+  },
   "devDependencies": {
     "docsify-cli": "^4.4.4"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
   }
 }

@@ -116,7 +116,7 @@ and an optional response body.
 
 ### What is REST ?
 
-Quotes from the [RedHat explanation of REST](https://www.redhat.com/en/topics/api/what-is-a-rest-api#rest)
+Quoted from the [RedHat explanation of REST](https://www.redhat.com/en/topics/api/what-is-a-rest-api#rest)
 
 > REST is a set of architectural constraints, not a protocol or a standard. API developers can implement REST in a 
 > variety of ways. When a client request is made via a RESTful API, it transfers a representation of the state of the 
