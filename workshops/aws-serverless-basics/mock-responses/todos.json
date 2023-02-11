@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": "set AWS credentials",
+      "completed": true
+    },
+    {
+      "id": "deploy a Lambda function",
+      "completed": true
+    },
+    {
+      "id": "create an API Gateway",
+      "completed": true
+    },
+    {
+      "id": "deploy a UI",
+      "completed": false
+    },
+    {
+      "id": "get rich",
+      "completed": false
+    }
+  ]
+}

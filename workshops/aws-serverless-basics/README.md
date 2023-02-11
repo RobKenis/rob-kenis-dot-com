@@ -215,4 +215,4 @@ These are the steps I would take to build it:
 When you've implemented the APIs correctly, the UI below will also work. In the following chapters, we will dive deeper
 in how to deploy the UI on AWS.
 
-<iframe src="/todo.html" title="TODO List"></iframe> 
+<iframe height="200px" src="/todo.html" title="TODO List"></iframe> 

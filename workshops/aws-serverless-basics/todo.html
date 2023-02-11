@@ -1,8 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>TODO List</title>
 </head>
 <body>
-<h1>This is your TODO List</h1>
+<style>
+    li INPUT {
+        margin-right: 1em;
+    }
+
+    li {
+        padding: .2em;
+    }
+
+    label {
+        vertical-align: top;
+    }
+</style>
+<script>
+    const retrieveTodos = (url) => {
+        const todoList = document.getElementById("todos");
+        todoList.innerHTML = '';
+
+        if (!url) {
+            url = document.getElementById('url-to-retrieve-todos').placeholder;
+        }
+        console.log(`Retrieving TODOs from ${url}`);
+        fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            data.items.forEach(todo => {
+                const item = document.createElement("li");
+
+                const completed = document.createElement("INPUT");
+                completed.setAttribute("type", "checkbox");
+                completed.checked = todo.completed;
+                item.appendChild(completed);
+
+                item.appendChild(document.createTextNode(todo.id));
+                todoList.appendChild(item);
+            })
+        }).catch(function (err) {
+            console.log('Error while retrieving TODOs', err);
+        });
+    }
+</script>
+<input id="url-to-retrieve-todos" placeholder="/mock-responses/todos.json"/>
+<button type="button" onclick="retrieveTodos(document.getElementById('url-to-retrieve-todos').value)">Get TODOs</button>
+<ul id="todos"></ul>
 </body>
 </html>

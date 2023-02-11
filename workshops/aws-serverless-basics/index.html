@@ -24,13 +24,13 @@
             document.getElementById("console-credentials").innerHTML = `Username: <strong>${response['user']}</strong> - Password: <strong>${response['password']}</strong>`
             document.getElementById("console-link").href = response['loginUrl']
 
-            document.getElementsByClassName("aws-cli-code-bash")[0].innerHTML = document.getElementsByClassName("aws-cli-code-bash")[0].innerHTML
-                .replace("ACCESS_KEY_PLACEHOLDER", response['accessKey'])
-                .replace("SECRET_KEY_PLACEHOLDER", response['secretKey'])
-
-            document.getElementsByClassName("aws-cli-code-powershell")[0].innerHTML = document.getElementsByClassName("aws-cli-code-powershell")[0].innerHTML
-                .replace("ACCESS_KEY_PLACEHOLDER", response['accessKey'])
-                .replace("SECRET_KEY_PLACEHOLDER", response['secretKey'])
+            // document.getElementsByClassName("aws-cli-code-bash")[0].innerHTML = document.getElementsByClassName("aws-cli-code-bash")[0].innerHTML
+            //     .replace("ACCESS_KEY_PLACEHOLDER", response['accessKey'])
+            //     .replace("SECRET_KEY_PLACEHOLDER", response['secretKey'])
+            //
+            // document.getElementsByClassName("aws-cli-code-powershell")[0].innerHTML = document.getElementsByClassName("aws-cli-code-powershell")[0].innerHTML
+            //     .replace("ACCESS_KEY_PLACEHOLDER", response['accessKey'])
+            //     .replace("SECRET_KEY_PLACEHOLDER", response['secretKey'])
         };
         Http.send(null);
     }, 2000);
