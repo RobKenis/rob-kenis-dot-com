@@ -78,6 +78,53 @@ exports.handler =  async function(event, context) {
 
 # Amazon API Gateway
 
+## HTTP and REST
+
+### What is HTTP ?
+
+Quoted from [the Wikipedia page of HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Technical_overview)
+
+> HTTP functions as a request–response protocol in the client–server model. A web browser, for example, may be the 
+> client whereas a process, named web server, running on a computer hosting one or more websites may be the server.
+
+An HTTP request consists of 3 required parts: The request method, the URL and the protocol version
+
+```shell
+GET /images/logo.png HTTP/1.1
+```
+
+followed by zero or more request headers.
+
+```shell
+Host: www.example.com
+Accept-Language: en
+```
+
+An HTTP response consists of 3 parts: The protocol version, the status code and the decsription of the status
+
+```shell
+HTTP/1.1 200 OK
+```
+
+followed by zero or more response headers
+
+```shell
+Content-Type: text/html
+```
+
+and an optional response body.
+
+### What is REST ?
+
+Quotes from the [RedHat explanation of REST](https://www.redhat.com/en/topics/api/what-is-a-rest-api#rest)
+
+> REST is a set of architectural constraints, not a protocol or a standard. API developers can implement REST in a 
+> variety of ways. When a client request is made via a RESTful API, it transfers a representation of the state of the 
+> resource to the requester or endpoint. This information, or representation, is delivered in one of several formats 
+> via HTTP: JSON (Javascript Object Notation), HTML, XLT, Python, PHP, or plain text. JSON is the most generally popular 
+> file format to use because, despite its name, it’s language-agnostic, as well as readable by both humans and machines.
+
+
 ## What is API Gateway?
 
 Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, 
