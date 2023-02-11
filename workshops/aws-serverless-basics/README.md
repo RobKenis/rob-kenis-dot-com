@@ -207,3 +207,7 @@ These are the steps I would take to build it:
 - Create a new endpoint in API Gateway with a new Lambda Function as backend
   - The endpoint handles GET requests and returns a list of to-do items.
 - Create a new endpoint which handles PUT requests to update the status in DynamoDB.
+
+## Testing your HTTP API
+
+[Postman](https://www.postman.com/) is a tool to execute HTTP requests and visualize the response.
