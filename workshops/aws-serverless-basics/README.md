@@ -211,3 +211,8 @@ These are the steps I would take to build it:
 ## Testing your HTTP API
 
 [Postman](https://www.postman.com/) is a tool to execute HTTP requests and visualize the response.
+
+When you've implemented the APIs correctly, the UI below will also work. In the following chapters, we will dive deeper
+in how to deploy the UI on AWS.
+
+<iframe src="/todo.html" title="TODO List"></iframe> 
