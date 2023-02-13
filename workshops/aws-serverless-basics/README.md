@@ -216,3 +216,22 @@ When you've implemented the APIs correctly, the UI below will also work. In the 
 in how to deploy the UI on AWS.
 
 <iframe height="200px" src="/todo.html" title="TODO List"></iframe> 
+
+# Deploy a website
+
+[S3](https://aws.amazon.com/s3/) is an Object Store provided by AWS. Unlike a normal file system, S3 offers the 
+functionality to manage objects. An object is for example a zip file, an image, an executable jar file. After the object
+is uploaded to S3, most of the management is handed over to AWS. The object is replicated over multiple data centers
+to guarantee no data loss in the event of a failure.
+
+A static website is nothing more than a collection of HTML, CSS and JavaScript files. These can be uploaded as objects
+to S3 and served as a static website.
+
+AWS explains it in their [documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
+quite well.
+
+Once you've completed the instructions on how to set up an S3 bucket for website hosting, host the UI for the 
+todo list. The source code can be found at https://workshop.robkenis.com/todo.html.
+
+!> For communication between the UI and the API to work, you will need to enable CORS on the API Gateway. The 
+CORS settings can be managed from the API Gateway Console.
