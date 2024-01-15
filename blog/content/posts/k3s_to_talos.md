@@ -8,7 +8,7 @@ image: "images/posts/k3s-to-talos/index.jpg"
 
 ## My homelab through the years
 
-I've been self-hosting and tinkering around for a couple of years now. A couple years ago, I deployed my first Pi-Hole
+I've been self-hosting and tinkering around for a couple of years. A couple years ago, I deployed my first Pi-Hole
 on a Raspberry Pi. I was amazed by the possibilities of self-hosting and got dragged into the rabbit hole sooner than
 I like to admit.
 
