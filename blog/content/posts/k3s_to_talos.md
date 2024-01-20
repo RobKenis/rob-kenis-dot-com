@@ -6,11 +6,12 @@ type: "post"
 image: "images/posts/k3s-to-talos/index.jpg"
 ---
 
+I've been self-hosting and tinkering around with servers for a couple of years.
+
 ## My homelab through the years
 
-I've been self-hosting and tinkering around for a couple of years. A couple years ago, I deployed my first Pi-Hole
-on a Raspberry Pi. I was amazed by the possibilities of self-hosting and got dragged into the rabbit hole sooner than
-I like to admit.
+A couple years ago, I deployed my first Pi-Hole on a Raspberry Pi. I was amazed by the possibilities of self-hosting and
+got dragged into the rabbit hole sooner than I like to admit.
 
 Through the years, I've been looking for ways to make my setup at home more reliable and easier to maintain. My first
 step was to containerize everything. So instead of manually installing Pi-Hole, I manually started a Docker container.
