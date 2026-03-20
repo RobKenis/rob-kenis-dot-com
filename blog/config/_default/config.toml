@@ -88,10 +88,6 @@ expire_days = 2
 
 # social site
 [[params.social]]
-icon = "ti-twitter-alt"
-link = "https://twitter.com/robkenis"
-
-[[params.social]]
 icon = "ti-linkedin"
 link = "https://linkedin.com/in/robkenis"
 
