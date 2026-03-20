@@ -65,7 +65,7 @@ weight = 2
   name = "Serverless Basics"
   url = "https://workshop.robkenis.com"
   parent = "Workshops"
-  weight = 1
+  weight = 5
     [menus.main.params]
       rel = 'external'
 
