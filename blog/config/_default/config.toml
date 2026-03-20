@@ -50,29 +50,17 @@ link = "plugins/search/search.js"
 [[menu.main]]
 name = "Home"
 url = "/"
-weight = 1
+weight = 10
 
 [[menu.main]]
 name = "About"
 url = "/about"
-weight = 2
-
-[[menu.main]]
-  name = "Workshops"
-  weight = 3
-
-[[menu.main]]
-  name = "Serverless Basics"
-  url = "https://workshop.robkenis.com"
-  parent = "Workshops"
-  weight = 5
-    [menus.main.params]
-      rel = 'external'
+weight = 20
 
 [[menu.main]]
   name = "Notes"
   url = "https://robkenis.dev"
-  weight = 4
+  weight = 30
     [menus.main.params]
       rel = 'external'
 
