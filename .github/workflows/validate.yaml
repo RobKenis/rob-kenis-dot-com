@@ -21,6 +21,4 @@ jobs:
         working-directory: ./deploy/aws
         run: |
           python templates/blog.py
-          python templates/github.py
-          python templates/guest_access.py
           python templates/workshops.py

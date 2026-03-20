@@ -7,6 +7,7 @@
 ## Blog
 
 The blog section is created using [hugo](https://gohugo.io).
+
 ```shell
 # Create a new post
 $ hugo new posts/my-new-post.md
@@ -16,8 +17,10 @@ $ hugo new posts/my-new-post.md
 # Start the server with drafts enabled
 $ HUGO_UGLYURLS=true hugo server -D
 ```
+
 It is important to enable ugly URLs when running locally. This is also the way that the site is deployed, so links
 are adapted to append the extension. When running locally without ugly URLS, the menu will break.
+
 - [ ] TODO: Make pretty URLs work in S3/CloudFront.
 
 ```shell

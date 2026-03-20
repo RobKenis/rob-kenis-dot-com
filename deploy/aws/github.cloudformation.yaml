@@ -1,0 +1,34 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: >
+  Creates and OIDC provider and role for use with GitHub Actions.
+  For more information on using OIDC to connect to AWS from GitHub Actions,
+  see https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services.
+
+Parameters:
+  GithubActionsThumbprint:
+    Type: CommaDelimitedList
+    Default: 6938fd4d98bab03faadb97b34396831e3780aea1
+  AudienceList:
+    Type: CommaDelimitedList
+    Default: sts.amazonaws.com
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: "GitHub Action Info"
+        Parameters:
+          - SubjectClaimFilters
+          - ReadOnlySubjectClaimFilters
+          - GithubActionsThumbprint
+          - AudienceList
+
+Resources:
+  GitHubIdentityProvider:
+    Type: AWS::IAM::OIDCProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ThumbprintList: !Ref GithubActionsThumbprint
+      ClientIdList: !Ref AudienceList
