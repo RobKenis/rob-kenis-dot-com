@@ -3,22 +3,10 @@
 .vscode/
 *.iml
 
-# Nuxt / Next
-.nuxt/
-.next/
-dist/
-out/
-
 # NPM / Yarn
 node_modules/
-
-# Jest
-coverage/
 
 # Hugo
 **/.hugo_build.lock
 blog/out/
 blog/public/
-
-# Asciidoc
-learn/.build/

@@ -27,3 +27,9 @@ are adapted to append the extension. When running locally without ugly URLS, the
 # Build static pages
 $ hugo -D
 ```
+
+## Workshops
+
+```shell
+podman run -v $(pwd)/workshops/aws-serverless-basics:/usr/share/nginx/html -p 8080:80 nginx:alpine 
+```
