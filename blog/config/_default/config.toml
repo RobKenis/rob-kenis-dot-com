@@ -58,9 +58,21 @@ url = "/about"
 weight = 2
 
 [[menu.main]]
+  name = "Workshops"
+  weight = 3
+
+[[menu.main]]
+  name = "Serverless Basics"
+  url = "https://workshop.robkenis.com"
+  parent = "Workshops"
+  weight = 1
+    [menus.main.params]
+      rel = 'external'
+
+[[menu.main]]
   name = "Notes"
   url = "https://robkenis.dev"
-  weight = 3
+  weight = 4
     [menus.main.params]
       rel = 'external'
 
