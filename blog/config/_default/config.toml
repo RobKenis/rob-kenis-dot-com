@@ -57,6 +57,13 @@ name = "About"
 url = "/about"
 weight = 2
 
+[[menu.main]]
+  name = "Notes"
+  url = "https://robkenis.dev"
+  weight = 3
+    [menus.main.params]
+      rel = 'external'
+
 # deult parameter
 [params]
 logo = "images/logo.png"
