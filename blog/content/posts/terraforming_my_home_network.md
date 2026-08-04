@@ -1,5 +1,5 @@
 ---
-title: "Terraforming my home network"
+title: "Routers, switches and Terraform"
 date: 2026-08-03T20:00:00+02:00
 description: "How I used Terragrunt, OpenTofu and Mikrotik to build out my home network"
 type: "post"
