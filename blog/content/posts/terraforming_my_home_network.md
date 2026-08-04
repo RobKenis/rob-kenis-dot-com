@@ -88,7 +88,7 @@ This time, I wanted to do better, at least the bare minimum: network devices go 
 phones disconnected from the other devices in my network. With all this in mind, I got to the drawing board to gather some IP ranges for all devices to sit in. _For now, servers and trusted
 devices are still in the same VLAN, I'll solve that issue when I have spare time again._ But now that I had the IP ranges in mind, 
 I followed the [docs](https://manual.mikrotik.com/docs/bridging-and-switching/vlan#simple-vlan-routing) on how to configure those on my router. But that story
-is only have true, I stole most of the implementation from <https://github.com/mirceanton/terraform-modules-routeros> which configures the VLANs and the bridge.
+is only half true, I stole most of the implementation from <https://github.com/mirceanton/terraform-modules-routeros> which configures the VLANs and the bridge.
 
 Configuring the VLANs, I had no idea what I was doing or what configuration meant. I come from AWS, I only know what ingress, egress and security groups mean. Moving over to
 VLANs, this was a bit uneasy for me. But what I'm taking away from this is: "Untagged ports put a VLAN ID on a packet, tagged ports can route packages tagged with a VLAN ID".
