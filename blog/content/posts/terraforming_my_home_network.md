@@ -102,6 +102,29 @@ received IP addresses from different VLANs. Networking devices got a certain IP 
 Man, this made me feel all kinds of emotions. If my mistake with the SwitchOS was bad, I'll tell you the difference between `wifi-qcow` and `wifi-qcow-ac`.
 I'm enjoying writing again, but I want to keep these posts short and sweet, so I'll tell you about my wifi journey in another post.
 
+## WinBox versus CLI versus Terraform
+
+I like the UX of WinBox for viewing my configuration and understanding the current state of the devices on my network. I can see ARP requests, DHCP leases
+and throughput on ports. The only thing I miss from Unifi are the dashboards and statistics, I guess I'll have to dive into a Prometheus exporter and
+Grafana dashboards later on.
+
+As for the CLI, I barely used it. During the configuration of wireless networks, I did some back and forth with Copilot for troubleshooting, which asked for the
+output of some commands. Output is verbose and easy to interpret, so it's good context, both for me and the LLM.
+
+And then there's Terraform. Did it actually do a good job for this purpose? In this case, I think the tool fits the purpose. As my network is growing and more
+devices are added, I find myself setting VLAN tags on ports and assigning static leases quite often. I don't have to open WinBox for any of those cases,
+I change 2 files, run my _apply_ command and call it a day. Should I run automation for planning and applying the configuration? Probably not, but it seems
+like a good opportunity to have CI runners in my homelab again, so that will probably be another post.
+
+## Conclusion
+
+Will this adventure get me a job as a network engineer? Probably not. But was it worth it? Definitely. I would recommend an infrastructure as code setup everyday, and these
+are my most important takeaways:
+
+- Manage your bridge, ethernet ports and VLANs through automation. It's good documentation for which cable goes into which port.
+- Give yourself a dedicated port on the router that has no firewall rules and gives your direct access to your network devices. Locking yourself out is annoying.
+- If your CPU usage goes up, look into [hardware offloading](https://help.mikrotik.com/docs/spaces/ROS/pages/62390319/L3+Hardware+Offloading).
+
 ## References
 
 - [Cover image](https://unsplash.com/photos/a-close-up-of-a-server-in-a-server-room-vSprjjDbu60) by [Tyler](https://unsplash.com/@tylergm) on Unsplash
