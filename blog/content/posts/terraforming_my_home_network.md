@@ -12,8 +12,8 @@ I wanted to make my network simpler, so I fell into a rabbithole of routers and 
 
 Before we get started, I want to clear up that I'm nowhere near a network engineer. I was perfectly happy with my Unifi devices, the Ubiquiti ecosystem
 has a user friendly management controller and all the dashboards I could ever need.
-It all started when a friend had an extra [RB1100AHx4](https://mikrotik.com/product/rb1100ahx4) laying around. With 13 Gigabit ethernet ports, I had more
-connectivity than I could use in the forseeable future and it came with rackmounts for which I didn't even have a rack.
+It all started when a friend had an extra [RB1100AHx4](https://mikrotik.com/product/rb1100ahx4) lying around. With 13 Gigabit ethernet ports, I had more
+connectivity than I could use in the foreseeable future and it came with rackmounts for which I didn't even have a rack.
 
 I could have stopped there, but I also got my hands on a [CSS326-24G-2S+RM](https://mikrotik.com/product/CSS326-24G-2SplusRM) switch and
 a [wireless access point](https://mikrotik.com/product/RBcAP2nD). Both of these devices weren't my brightest idea, but that will become more clear
@@ -23,7 +23,7 @@ further down the post.
 
 I was about to spend some money on buying networking hardware, so I might as well learn something from it. After years of using Unifi, the simplicity is the
 thing that stuck with me, all is managed with the click of a button. And exactly those clicks of a button is what I cannot preach as an IT professional who is
-allergic to ClickOps. I've spend years mastering infrastructure as code, reproducability and deployment pipelines, just for my home network to be managed by a mouse.
+allergic to ClickOps. I've spent years mastering infrastructure as code, reproducibility and deployment pipelines, just for my home network to be managed by a mouse.
 Not on my watch, when we're doing this again, we're doing it properly through Terraform and Git commits.
 
 ## Learning MikroTik
